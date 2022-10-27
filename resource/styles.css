@@ -1,0 +1,53 @@
+.vit-container{
+    font-size: 50px;
+    border-top: 5mm;
+    border-bottom: 1mm;
+    border-left: 1mm;
+    border-right: 1mm;
+}
+hr{
+    background-color: #E8E8E8;
+}
+
+div.vit-1{
+    background-color: white;
+    margin-left: 35px;
+    margin-right: 810px;
+    margin-top: 15px;
+    border-top: 5px solid blue;
+    border-radius: 10px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+
+}
+div.vit-2{
+    background-color: white;
+    margin-left: 35px;
+    margin-right: 810px;
+    margin-top: 15px;
+    border-top: 5px solid red;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+
+}
+div.vit-3{
+    background-color: white;
+    margin-left: 35px;
+    margin-right: 810px;
+    margin-top: 15px;
+    border-top: 5px solid green;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+
+}
+center{
+    font-weight:bold;
+    font-family: 'Lucida Console', 'Courier New', 'monospace';
+}
+button{
+    margin-left: 150px;
+}
+
