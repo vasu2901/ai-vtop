@@ -4,8 +4,8 @@ export class Studsignup extends Component {
     check = () => {
         var username = document.getElementById("reg_no").value;
                 var mail = document.getElementById("mail").value;
-                var check1 = "2021@vitbhopal.ac.in";
-                var check2 = "21BAI";
+                var check1 = "@vitbhopal.ac.in";
+                var check2 = "BAI";
                 if (username.indexOf(check2) !== -1) {
                     if(mail.indexOf(check1) !== -1) {
                         alert("Yout details have been updated");
