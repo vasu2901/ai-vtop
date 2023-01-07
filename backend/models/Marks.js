@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const marksSchema = new Schema({
+  stud:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'user'
+  },
   coursename: {
     type: String,
     required: true
@@ -21,15 +25,15 @@ const marksSchema = new Schema({
   },
   credit : {
     type: Number,
-    required: true
+    default: 4
   },
-  faculty_name: {
+  facultyname: {
     type: String,
     required: true
   },
   facultyid: {
     type: String,
     required: true
-  },
+  }
 });
 module.exports = mongoose.model('student',marksSchema);

@@ -1,13 +1,13 @@
 const express = require('express');
 const bcrypt = require('bcryptjs')
-const User = require("../models/User");
 const fetchUser = require("../middleware/fetchUser");
+const User = require('../models/User');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const JWT_SECRET = 'harryisagoodboy';
 //Signup.
-router.post('/createuser', [
+router.post('/createstud', [
     body('email').isEmail(),
     body('password').isLength({ min: 8 })
 ], async (req, res) => {
@@ -42,7 +42,7 @@ router.post('/createuser', [
 })
 
 // Login
-router.post('/login', [
+router.post('/loginstud', [
     body('email').isEmail(),
     body('password').exists()
 ], async (req, res) => {
@@ -76,7 +76,7 @@ router.post('/login', [
 })
 
 // Get login 
-router.get('/getuser', fetchUser, async (req, res) => {
+router.get('/getstud', fetchUser, async (req, res) => {
 
     try {
         const userID = req.user.id;
