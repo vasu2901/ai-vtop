@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI-VTOP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="vit-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body style="background-color: #ECF0F1;">
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg" style="height: 60px; background-color: #236fa1e2; z-index: 1;">
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+            aria-controls="offcanvasExample" style="margin-left: 5px;">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/template/side_test.html"
+                style="font-size: 30px; font-family: 'Times New Roman', Times, serif;color: white;"><strong>AI-VTOP</strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>Hello
+            </button>
+        </div>
+        </div>
+    </nav>
+
+    <!--Sidebar-->
+    <div>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel" style="margin-top: 61px; width: 180px; margin-bottom: 340px;">
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-light bg-light" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="margin-left: -15px; width: 45px;">
+                    <i class="fa fa-briefcase" style="color:black; margin-left: -15px;">My Info </i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">
+                        <h5>My Info</h5>
+                    </li>
+                    <!-- Dropdown menu links -->
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">VIT Gmail Credentials</a></li>
+                    <li><a class="dropdown-item" href="#">Student Bank Info</a></li>
+                </ul>
+            </div>
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-light bg-light" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="margin-left: -15px; width:45px">
+                    <i class="fa fa-info-circle" style="color:black">Info Corner</i>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                    <li class="dropdown-header">
+                        <h5>Info Corner</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#"> FAQ</a></li>
+                    <li><a class="dropdown-item" href="#">Spotlight</a></li>
+                    <li><a class="dropdown-item" href="#">Circulars</a></li>
+                </ul>
+            </div>
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-light bg-light" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="margin-left: -15px;  width:45px">
+                    <i class="fa fa-graduation-cap" style="color:black"> Courses</i>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                    <li class="dropdown-header">
+                        <h5>Courses</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="/template/pg_core.html">Program Core</a></li>
+                    <li><a class="dropdown-item" href="/template/pg_elec.html">Program Elective</a></li>
+                    <li><a class="dropdown-item" href="/template/uni_core.html">University Core</a></li>
+                    <li><a class="dropdown-item" href="/template/uni_elec.html">University Elective</a></li>
+                    <li><a class="dropdown-item" href="#">Open Elective</a></li>
+                </ul>
+            </div>
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-light bg-light" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="margin-left: -15px;  width:45px">
+                    <i class="fa fa-bank" style="color:black">Research</i>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                    <li class="dropdown-header">
+                        <h5>Research</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Internship</a></li>
+                    <li><a class="dropdown-item" href="#">Project</a></li>
+                    <li><a class="dropdown-item" href="#">Extra Curriculars</a></li>
+                </ul>
+            </div>
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-light bg-light" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="margin-left: -15px;  width:45px">
+                    <i class="fa fa-id-card" style="color:black">Credits Earned</i>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                    <li class="dropdown-header">
+                        <h5>Credits Earned</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Action two</a></li>
+                    <li><a class="dropdown-item" href="#">Action three</a></li>
+                </ul>
+            </div>
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-light bg-light" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="margin-left: -15px;  width:45px">
+                    <i class="fa fa-book" style="color:black">Credits Remaining</i>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                    <li class="dropdown-header">
+                        <h5>Credits Remaining</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Action two</a></li>
+                    <li><a class="dropdown-item" href="#">Action three</a></li>
+                </ul>
+            </div>
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-light bg-light" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="margin-left: -15px;  width:45px">
+                    <i class="fa fa-certificate" style="color:black">Result Corner</i>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                    <li class="dropdown-header">
+                        <h5>Result Corner</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Action two</a></li>
+                    <li><a class="dropdown-item" href="#">Action three</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--Sidebar before span -->
+    <div class="container-fluid"
+        style="margin-left:0px; margin-right:900px;width: 30px; background-color: white; z-index: 5;position: absolute;">
+        <div>
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-light bg-light" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="margin-left: -15px; width: 45px;">
+                    <i class="fa fa-briefcase" style="color:black"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">
+                        <h5>My Info</h5>
+                    </li>
+                    <!-- Dropdown menu links -->
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">VIT Gmail Credentials</a></li>
+                    <li><a class="dropdown-item" href="#">Student Bank Info</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-light bg-light" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="margin-left: -15px; width:45px">
+                    <i class="fa fa-info-circle" style="color:black"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                    <li class="dropdown-header">
+                        <h5>Info Corner</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#"> FAQ</a></li>
+                    <li><a class="dropdown-item" href="#">Spotlight</a></li>
+                    <li><a class="dropdown-item" href="#">Circulars</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-light bg-light" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="margin-left: -15px;  width:45px">
+                    <i class="fa fa-graduation-cap" style="color:black"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                    <li class="dropdown-header">
+                        <h5>Courses</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="/template/pg_core.html">Program Core</a></li>
+                    <li><a class="dropdown-item" href="/template/pg_elec.html">Program Elective</a></li>
+                    <li><a class="dropdown-item" href="/template/uni_core.html">University Core</a></li>
+                    <li><a class="dropdown-item" href="/template/uni_elec.html">University Elective</a></li>
+                    <li><a class="dropdown-item" href="#">Open Elective</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-light bg-light" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="margin-left: -15px;  width:45px">
+                    <i class="fa fa-bank" style="color:black"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                    <li class="dropdown-header">
+                        <h5>Research</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Internship</a></li>
+                    <li><a class="dropdown-item" href="#">Project</a></li>
+                    <li><a class="dropdown-item" href="#">Extra Curriculars</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-light bg-light" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="margin-left: -15px;  width:45px">
+                    <i class="fa fa-id-card" style="color:black"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                    <li class="dropdown-header">
+                        <h5>Credits Earned</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Action two</a></li>
+                    <li><a class="dropdown-item" href="#">Action three</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-light bg-light" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="margin-left: -15px;  width:45px">
+                    <i class="fa fa-book" style="color:black"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                    <li class="dropdown-header">
+                        <h5>Credits Remaining</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Action two</a></li>
+                    <li><a class="dropdown-item" href="#">Action three</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-light bg-light" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="margin-left: -15px;  width:45px">
+                    <i class="fa fa-certificate" style="color:black"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                    <li class="dropdown-header">
+                        <h5>Result Corner</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Action two</a></li>
+                    <li><a class="dropdown-item" href="#">Action three</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--Enter her-->
+    <div class="innerbody"
+        style="margin-top: 10px;margin-left: 100px; background-color: white; color: black; z-index: -1; position: relative;">
+        <style>
+            table,
+            th,
+            td {
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        </style>
+        <!--Courses Table-->
+        <div class="container my-3" style=" margin-top: 75px;">
+            <center>
+            <table border="1" cellspacing="0" >
+                <thead>
+                    <tr>
+                        <th rowspan="2">
+                            Course Structure:
+                        </th>
+                        <th >
+                                Programme Core (PC)
+                            
+                        </th>
+                        <th >
+                            
+                                Programme Elective (PE)
+                            
+                        </th>
+                        <th >
+                                University Core (UC)
+                            
+                        </th>
+                        <th >
+                            
+                                University Elective (UE)
+                            
+                        </th>
+                        <th width = "100" style="background-color: #2980b9;">
+                                Total
+                            
+                        </th>
+                    </tr>
+                     <tr>
+                        <td >
+                            
+                                55
+                            
+                        </td>
+                        <td >
+                            
+                                15
+                            
+                        </td>
+                        <td >
+                            
+                                69
+                            
+                        </td>
+                        <td >
+                            
+                                21
+                            
+                        </td>
+                        <td width = "100" style="background-color: #2980b9;">
+                                160
+                            
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        <!--University Core-->
+        <style>
+            table, th, td {
+              padding-top: 5px;
+              padding-bottom: 5px;
+              padding-left: 10px;
+              padding-right: 10px;
+            }
+            </style>
+        
+        <div class="container my-3" style=" margin-top: 75px; margin-bottom: 50px;">
+        
+        <table border="1" cellspacing="0" >
+            <thead>
+                <tr align = "center">
+                    <th colspan="3"  style="background-color: #2980b9;">
+                        UNIVERSITY CORE
+                    </th>
+                    <th style="background-color: #2980b9;">
+                        
+                            69 Credits
+                        
+                
+                    </th>
+                </tr>
+            </thead>
+        <thead>
+                <tr align="center">
+                    <th colspan="3" >
+                        
+                            Natural Science Core
+                        
+                    </th>
+                    <th >
+                        
+                            23 credits
+                        
+                    
+                    </th>
+                </tr>
+            </thead>
+                <tr>
+                    <td >
+                        
+                            PHY1001
+                        
+                    </td>
+                    <td >
+                        
+                            Engineering Physics
+                        
+                    </td>
+                    <td >
+                        
+                            LTP
+                        
+                    </td>
+                    <td >
+                        
+                            4
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        
+                            CHY1005
+                        
+                    </td>
+                    <td >
+                        
+                            Introduction To Computational Chemistry
+                        
+                    </td>
+                    <td >
+                        
+                            LTP
+                        
+                    </td>
+                    <td >
+                        
+                            4
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        
+                            MAT1001
+                        
+                    </td>
+                    <td >
+                        
+                            Calculus And Laplace Transforms
+                        
+                    </td>
+                    <td >
+                        
+                            LT
+                        
+                    </td>
+                    <td >
+                        
+                            4
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        
+                            MAT3002
+                        
+                    </td>
+                    <td >
+                    
+                            Applied Linear Algebra
+                        
+                    </td>
+                    <td >
+                        
+                            LT
+                        
+                    </td>
+                    <td >
+                        
+                            3
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        
+                            MAT3003
+                        
+                    </td>
+                    <td >
+                        
+                            Probability, Statistics and Reliability
+                        
+                    </td>
+                    <td >
+                        
+                            LT
+                        
+                    </td>
+                    <td >
+                        
+                            4
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td  >
+                        
+                            MAT2002
+                        
+                    </td>
+                    <td >
+                            Discrete Mathematics and Graph Theory
+                        
+                    </td>
+                    <td >
+                        
+                            LT
+                        
+                    </td>
+                    <td >
+                        
+                            4
+                        
+                    </td>
+                </tr>
+            <thead>
+                <tr align="center">
+                    <th colspan="3" >
+                        
+                            Basic Engineering Sciences Core
+                        
+                    </th>
+                    <th >
+                        
+                            12 credits
+                        
+                    </th>
+                </tr>
+            </thead>
+                <tr>
+                    <td >
+                    </td>
+                    <td >
+                            Engineering Design and Modeling
+                        
+                    </td>
+                    <td >
+                        
+                            LTP
+                        
+                    </td>
+                    <td >
+                        
+                            4
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        
+                            EEE1001
+                        
+                    </td>
+                    <td >
+                            Electric Circuits and Systems
+                        
+                    </td>
+                    <td >
+                        
+                            LTP
+                        
+                    </td>
+                    <td >
+                        
+                            4
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        
+                            CSA2001
+                        
+                    </td>
+                    <td >
+                            Fundamentals Of AI and ML
+                        
+                    </td>
+                    <td >
+                        
+                            LTP
+                        
+                    </td>
+                    <td >
+                        
+                            4
+                        
+                    </td>
+                </tr>
+            <thead>
+                <tr align="center">
+                    <th colspan="3" >
+                        
+                            Skill Development Courses
+                        
+                    </th>
+                    <th >
+                        
+                            13 credits
+                        
+                    </th>
+                </tr>
+            </thead>
+        
+                <tr>
+                    <td >
+                        
+                            CSE1021
+                        
+                    </td>
+                    <td >
+                        
+                            Introduction To Problem Solving and Programming
+                        
+                    </td>
+                    <td >
+                        
+                            LP
+                        
+                    </td>
+                    <td >
+                        
+                            4
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        
+                            CSE3002
+                        
+                    </td>
+                    <td >
+                        
+                            Programming In Java
+                        
+                    </td>
+                    <td >
+                        
+                            LP
+                        
+                    </td>
+                    <td >
+                        
+                            3
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                    </td>
+                    <td >
+                        
+                            Competitive Coding Practices
+                        
+                    </td>
+                    <td >
+                        
+                            LP
+                        
+                    </td>
+                    <td >
+                        
+                            3
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                    </td>
+                    <td >
+                        
+                            Skills For Employment
+                        
+                    </td>
+                    <td >
+                        
+                            P
+                        
+                    </td>
+                    <td >
+                        
+                            1
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                    </td>
+                    <td >
+                        
+                            Quantitative Skills
+                        
+                    </td>
+                    <td >
+                        
+                            LT
+                        
+                    </td>
+                    <td >
+                        
+                            2
+                        
+                    </td>
+                </tr>
+            <thead>
+                <tr align="center">
+                    <th colspan="3" >
+                        
+                            
+                                Humanities Social Science &amp; Management Core
+                            
+                        
+                    </th>
+                    <th >
+                        
+                            7 credits
+                        
+                    </th>
+                </tr>
+            </thead>
+        
+                <tr>
+                    <td >
+                        
+                            ENG1004
+                        
+                    </td>
+                    <td >
+                        
+                            Effective Communication
+                        
+                    </td>
+                    <td >
+                        
+                            LT
+                        
+                    </td>
+                    <td >
+                        
+                            3
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        
+                            ENG2005
+                        
+                    </td>
+                    <td >
+                        
+                            Advanced Technical Communication Skills
+                        
+                    </td>
+                    <td >
+                        
+                            LT
+                        
+                    </td>
+                    <td >
+                        
+                            2
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        
+                            CHY1006
+                        
+                    </td>
+                    <td >
+                        
+                            Environmental Sustainability
+                        
+                    </td>
+                    <td >
+                        
+                            LT
+                        
+                    </td>
+                    <td >
+                        
+                            2
+                        
+                    </td>
+                </tr>
+            <thead>
+                <tr align="center">
+                    <th colspan="3" >
+                        
+                            Projects & Internships
+                        
+                    </th>
+                    <th >
+                        
+                            14 credits
+                        
+                    </th>
+                </tr>
+            </thead>
+                <tr>
+                    <td >
+                        
+                            DSN2098
+                        
+                    </td>
+                    <td >
+                        
+                            Project Exhibition - I
+                        
+                    </td>
+                    <td >
+                            PJ
+                        
+                    </td>
+                    <td >
+                        
+                            1
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        
+                            DSN2099
+                        
+                    </td>
+                    <td >
+                        
+                            Project Exhibition - II
+                        
+                    </td>
+                    <td >
+                            PJ
+                        
+                    </td>
+                    <td >
+                        
+                            1
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        
+                            DSN3099
+                        
+                    </td>
+                    <td >
+                        
+                            Engineering Project in Community Service
+                        
+                    </td>
+                    <td >
+                       
+                            PJ
+                        
+                    </td>
+                    <td >
+                        
+                            2
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                    </td>
+                    <td >
+                        
+                            Summer Industrial Internship
+                        
+                    </td>
+                    <td >
+                       
+                            PJ
+                        
+                    </td>
+                    <td >
+                        
+                            1
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                    </td>
+                    <td >
+                        
+                            Semester Internship
+                        
+                    </td>
+                    <td>
+                       
+                            PJ
+                        
+                    </td>
+                    <td>
+                        
+                            4
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        
+                            Capstone Project
+                        
+                    </td>
+                    <td>
+                       
+                            PJ
+                        
+                    </td>
+                    <td>
+                        
+                            5
+                        
+                    </td>
+                </tr>
+            
+        </table>
+        </div></center>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

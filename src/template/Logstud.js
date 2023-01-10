@@ -6,8 +6,8 @@ const Logstud = () => {
         var username = document.getElementById("Username").value;
         var check = "BAI";
         if (username.indexOf(check) !== -1) {
-            alert("Hello Dear Student");
-
+            alert("Welcome to Dear Student");
+            window.location.href = "http://localhost:3000/homewebsite"
         }
         else {
             alert("Sorry you can't logIn");

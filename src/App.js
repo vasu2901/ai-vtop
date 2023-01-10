@@ -12,6 +12,7 @@ import {
   Route
 } from "react-router-dom"
 import Main from './template/Main';
+import Homepage from './template/Homepage';
 function App() {
   return (
     <div>
@@ -24,6 +25,7 @@ function App() {
             <Route path="/Studentsignup" element={<Studsignup />}></Route>
             <Route path="/Facultysignup" element={<Facaignup />}></Route>
             <Route path="/Adminsignup" element={<Adminsignup />} />
+            <Route path= "/homewebsite" element={<Homepage />} />
           </Routes>
         </Router>
       </div>
