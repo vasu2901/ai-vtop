@@ -9,7 +9,7 @@ const Navbar2 = () => {
           <i className="navbar-toggler-icon" style={{color: "black"}}></i>
         </button>
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/"
+          <Link className="navbar-brand" to="/homewebsite"
             style={{fontSize: "30px", fontFamily: "TimesNewRoman, Times, serif",color: "white"}}><strong>AI-VTOP</strong></Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

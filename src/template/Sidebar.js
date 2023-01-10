@@ -7,11 +7,11 @@ const Sidebar = () => {
             <Navbar2 />
             <div>
                 <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample"
-                    aria-labelledby="offcanvasExampleLabel" style={{ marginTop: "61px", width: "180px", marginBottom: "340px" }}>
+                    aria-labelledby="offcanvasExampleLabel" style={{ marginTop: "61px", width: "500px", marginBottom: "340px" }}>
                     <div className="btn-group dropend">
-                        <button type="button" className="btn btn-light bg-light" data-bs-toggle="dropdown" aria-expanded="false"
-                            style={{width: "45px" }}>
-                            <i className="fa fa-briefcase" style={{ color: "black",  }}>My Info </i>
+                        <button type="button" className="btn btn-light bg-dark" data-bs-toggle="dropdown" aria-expanded="false"
+                            style={{width: "100px", color: "black" }}>
+                            <i className="fa-solid fa-briefcase"></i>
                         </button>
                         <ul className="dropdown-menu">
                             <li className="dropdown-header">
