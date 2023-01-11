@@ -5,7 +5,7 @@ const Navbar2 = () => {
     <div>
       <nav className="navbar navbar-expand-lg" style={{height: "60px", backgroundColor: "#236fa1e2", zindex: "1"}}>
         <button className="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-          aria-controls="offcanvasExample" style={{marginLeft: "5px"}}>
+          aria-controls="offcanvasExample">
           <i className="navbar-toggler-icon" style={{color: "black"}}></i>
         </button>
         <div className="container-fluid">

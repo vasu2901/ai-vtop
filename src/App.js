@@ -13,9 +13,14 @@ import {
 } from "react-router-dom"
 import Main from './template/Main';
 import Homepage from './template/Homepage';
+import Uncore from './template/Uncore';
+import AddMarks from './template/AddMarks';
+import NoteState from './Context/notes/NoteState';
+import ShowMarks from './template/ShowMarks';
 function App() {
   return (
     <div>
+      <NoteState>
         <Router>
           <Routes>
             <Route path="/" element={<Main />}></Route>
@@ -26,8 +31,12 @@ function App() {
             <Route path="/Facultysignup" element={<Facaignup />}></Route>
             <Route path="/Adminsignup" element={<Adminsignup />} />
             <Route path= "/homewebsite" element={<Homepage />} />
+            <Route path="/unicore" element={<Uncore />} />
+            <Route path="/addMarks" element={<AddMarks />} />
+            <Route path='/showMarks' element={<ShowMarks />} />
           </Routes>
         </Router>
+        </NoteState>
       </div>
   )
 }
