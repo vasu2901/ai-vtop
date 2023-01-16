@@ -22,6 +22,7 @@ router.post('/postmarks', fetchUser, [
     body('courseid').exists(),
     body('coursetype').exists(),
     body('grades').exists(),
+    body('credit').exists(),
     body('facultyname').exists(),
     body('facultyid').exists(),
 ], async (req, res) => {
@@ -30,9 +31,9 @@ router.post('/postmarks', fetchUser, [
         if (!errors.isEmpty()) {
             return res.status(400).json({ error: errors.array() });
         }
-        const { coursename, courseid, coursetype, grades, facultyname, facultyid } = req.body;
+        const { coursename, courseid, coursetype, grades, credit, facultyname, facultyid } = req.body;
         const marks = new Marks({
-            stud: req.user.id, coursename, courseid, coursetype, grades, facultyname, facultyid
+            stud: req.user.id, coursename, courseid, coursetype, grades, credit, facultyname, facultyid
         })
         const savedMarks = await marks.save();
         res.json(savedMarks);

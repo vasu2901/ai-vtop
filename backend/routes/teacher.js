@@ -9,7 +9,7 @@ router.get('/', fetchUser, async (req, res) => {
         const user = await User.findById(userID).select("-password");
         const marks = await Marks.find({facultyname : user.name});
         if (marks) {
-            return res.json(req.user.id);
+            return res.json(marks);
         }
 
         return res.json(user.name);

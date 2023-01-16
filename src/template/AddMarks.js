@@ -5,7 +5,7 @@ const AddMarks = () => {
 
   const context = useContext(notecontext);
   const { addNotes } = context;
-  const [note, setnote] = useState({coursename: "", courseid : "", coursetype: "",  credit: "",grades: "",facultyname : "",facultyid: ""})
+  const [note, setnote] = useState({coursename: "", courseid : "", coursetype: "",  grades: "",credit: "",facultyname : "",facultyid: ""})
   const handleClick = (e) =>
   { 
       e.preventDefault();
@@ -29,6 +29,8 @@ const AddMarks = () => {
             <option value="Introduction to  Python Programming">Introduction to  Python Programming</option>
             <option value="Python Programming">Python Programming</option>
             <option value="DataBase Management System">DataBase Management System</option>
+            <option value="Operating System">Operating System</option>
+            <option value="Python Programming2">Python Programming2</option>
           </select>
           <hr />
           <select className="form-select" name='courseid' aria-label="Default select example" style={{ backgroundColor: "#007FFF", color: "white" }} onChange={onchange}>
@@ -36,6 +38,9 @@ const AddMarks = () => {
             <option value="CSE2001">CSE2001</option>
             <option value="CSE3001">CSE3001</option>
             <option value="CSE3002">CSE3002</option>
+            <option value="CSE3003">CSE3003</option>
+            
+            <option value="CSE3003">CSE3004</option>
           </select>
           <hr />
           <select className="form-select" name='coursetype' aria-label="Default select example" style={{ backgroundColor: "#007FFF", color: "white" }} onChange={onchange}>
@@ -45,15 +50,6 @@ const AddMarks = () => {
             <option value="PC">Program Core</option>
             <option value="PE">Program Elective</option>
             <option value="OE">Open Elective</option>
-          </select>
-          <hr />
-          <select className="form-select" name='credit' aria-label="Default select example" style={{ backgroundColor: "#007FFF", color: "white" }} onChange={onchange}>
-            <option defaultValue>Credits</option>
-            <option value="0">Zero</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-            <option value="4">Four</option>
           </select>
           <hr />
           <select className="form-select" name='grades' aria-label="Default select example" style={{ backgroundColor: "#007FFF", color: "white" }} onChange={onchange}>
@@ -69,6 +65,15 @@ const AddMarks = () => {
             <option value="P">P</option>
           </select>
           <hr />
+          <select className="form-select" name='credit' aria-label="Default select example" style={{ backgroundColor: "#007FFF", color: "white" }} onChange={onchange}>
+            <option defaultValue>Credits</option>
+            <option value="0">Zero</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="4">Four</option>
+          </select>
+          <hr />
           <select className="form-select" name='facultyname' aria-label="Default select example" style={{ backgroundColor: "#007FFF", color: "white" }} onChange={onchange}>
             <option defaultValue>Name of the Faculty</option>
             <option value="Raja Soundaran">Raja Soundaran</option>
@@ -78,8 +83,8 @@ const AddMarks = () => {
           <hr />
           <select className="form-select" name='facultyid' aria-label="Default select example" style={{ backgroundColor: "#007FFF", color: "white" }} onChange={onchange}>
             <option defaultValue>Faculty Id</option>
+            <option value="100055">100055</option>
             <option value="100155">100155</option>
-            <option value="100155">100055</option>
             <option value="100255">100255</option>
           </select>
           <hr />

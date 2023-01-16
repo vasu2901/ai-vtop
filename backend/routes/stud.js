@@ -43,16 +43,16 @@ router.post('/createstud', [
 
 // Login
 router.post('/loginstud', [
-    body('email').isEmail(),
+    body('reg_no').exists(),
     body('password').exists()
 ], async (req, res) => {
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
         return res.status(400).json({ error: errors.array() });
     }
-    const { email, password } = req.body;
+    const { reg_no, password } = req.body;
     try {
-        let user = await User.findOne({ email });
+        let user = await User.findOne({ reg_no });
         if (!user) {
             return res.status(404).json({ error: "Please enter your valid credentials" });
         }

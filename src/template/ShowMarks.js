@@ -8,7 +8,7 @@ const ShowMarks = () => {
   const { notes, fetchNotes } = context;
   useEffect(()=>{
     fetchNotes();
-  })
+  },[])
   return (
     <div>
       <Sidebar />

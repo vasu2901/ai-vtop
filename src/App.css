@@ -28,6 +28,25 @@
   color: #61dafb;
 }
 
+table {
+  border: 2px solid black;
+  width: 50%;
+  height: auto;
+}
+  
+th {
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+}
+  
+td {
+  text-align: center;
+  border-left: 1px solid black;
+}
+tr{
+  text-align: center;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
