@@ -48,8 +48,8 @@ const Sidebar = () => {
                             <li className="dropdown-header">
                                 <h5>Courses</h5>
                             </li>
-                            <li><Link className="dropdown-item" to="/">Program Core</Link></li>
-                            <li><Link className="dropdown-item" to="/">Program Elective</Link></li>
+                            <li><Link className="dropdown-item" to="/pgcore">Program Core</Link></li>
+                            <li><Link className="dropdown-item" to="/pgelec">Program Elective</Link></li>
                             <li><Link className="dropdown-item" to="/unicore">University Core</Link></li>
                             <li><Link className="dropdown-item" to="/unelec">University Elective</Link></li>
                             <li><Link className="dropdown-item" to="/">Open Elective</Link></li>
@@ -95,7 +95,7 @@ const Sidebar = () => {
                             <li className="dropdown-header">
                                 <h5>Credits Remaining</h5>
                             </li>
-                            <li><Link className="dropdown-item" to="/PCcredits">Program Core</Link></li>
+                            <li><Link className="dropdown-item" to="/remcredits">Credits Remaining</Link></li>
                         </ul>
                     </div>
                     <div className="btn-group dropend">
@@ -163,8 +163,8 @@ const Sidebar = () => {
                             <li className="dropdown-header">
                                 <h5>Courses</h5>
                             </li>
-                            <li><Link className="dropdown-item" to="/template/pg_core.html">Program Core</Link></li>
-                            <li><Link className="dropdown-item" to="/template/pg_elec.html">Program Elective</Link></li>
+                            <li><Link className="dropdown-item" to="/pgcore">Program Core</Link></li>
+                            <li><Link className="dropdown-item" to="/pgelec">Program Elective</Link></li>
                             <li><Link className="dropdown-item" to="/unicore">University Core</Link></li>
                             <li><Link className="dropdown-item" to="/unelec">University Elective</Link></li>
                             <li><Link className="dropdown-item" to="/">Open Elective</Link></li>
@@ -216,7 +216,7 @@ const Sidebar = () => {
                             <li className="dropdown-header">
                                 <h5>Credits Remaining</h5>
                             </li>
-                            <li><Link className="dropdown-item" to="/PCcredits">Program Core</Link></li>
+                            <li><Link className="dropdown-item" to="/remcredits">Credits Remaining</Link></li>
                         </ul>
                     </div>
                 </div>

@@ -19,6 +19,8 @@ import NoteState from './Context/notes/NoteState';
 import ShowMarks from './template/ShowMarks';
 import PCcredits from './template/PCcredits';
 import Unelec from './template/Unelec';
+import Pgcore from './template/Pgcore';
+import Pgelec from './template/Pgelec';
 function App() {
   return (
     <div>
@@ -35,9 +37,11 @@ function App() {
             <Route path= "/homewebsite" element={<Homepage />} />
             <Route path="/unicore" element={<Uncore />} />
             <Route path="/unelec" element={<Unelec />} />
+            <Route path="/pgcore" element={<Pgcore />} />
+            <Route path="/pgelec" element={<Pgelec />} />
             <Route path="/addMarks" element={<AddMarks />} />
             <Route path='/showMarks' element={<ShowMarks />} />
-            <Route path='/PCcredits' element={<PCcredits />} />
+            <Route path='/remcredits' element={<PCcredits />} />
           </Routes>
         </Router>
         </NoteState>

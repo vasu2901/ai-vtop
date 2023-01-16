@@ -8,11 +8,11 @@ const ShowMarks = () => {
   const { notes, fetchNotes } = context;
   useEffect(()=>{
     fetchNotes();
-  },[])
+  },[fetchNotes])
   return (
     <div>
       <Sidebar />
-      <div className="innerbody" style={{ marginTop: "10px", marginLeft: "50px", backgroundColor: "white", position: "relative", borderTop: "5px solid blue", maxWidth: "94%"}} >
+      <div className="innerbody" style={{ marginTop: "2.5%", marginLeft: "10%", backgroundColor: "white", position: "relative", borderTop: "5px solid blue", maxWidth: "85%"}} >
         <h3 className="text-center">Result</h3>
         <hr />
 

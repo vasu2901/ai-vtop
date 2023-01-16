@@ -6,7 +6,7 @@ const PCcredits = () => {
     const { notes, fetchNotes } = context;
     useEffect(() => {
         fetchNotes();
-    }, [])
+    },[fetchNotes])
     const count0 = () => {
         let total0 = 0;
         notes.forEach((note) => {
@@ -63,6 +63,10 @@ const PCcredits = () => {
             <button className='btn  btn-primary' onClick={count3}>Know University Elective Credits</button>
             <hr />
             </div>
+            <script type='javascript'>
+                console.log("Hello world");
+                <h1>Hello</h1>
+            </script>
         </div>
     )
 }
