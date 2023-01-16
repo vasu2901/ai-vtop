@@ -46,6 +46,7 @@ router.post('/loginstud', [
     body('reg_no').exists(),
     body('password').exists()
 ], async (req, res) => {
+    const success = false;
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
         return res.status(400).json({ error: errors.array() });
@@ -54,11 +55,11 @@ router.post('/loginstud', [
     try {
         let user = await User.findOne({ reg_no });
         if (!user) {
-            return res.status(404).json({ error: "Please enter your valid credentials" });
+            return res.status(404).json({success: success, error: "Please enter your valid credentials" });
         }
         const passwordcompare = await bcrypt.compare(password, user.password);
         if (!passwordcompare) {
-            return res.status(404).json({ error: "Please enter your valid credentials" });
+            return res.status(404).json({success: success, error: "Please enter your valid credentials" });
         }
         const data = {
             user: {
@@ -66,7 +67,7 @@ router.post('/loginstud', [
             }
         }
         const authtoken = jwt.sign(data, JWT_SECRET);
-        res.json({ authtoken });
+        return res.status(200).json({ success: true, authtoken: authtoken});
     }
     catch (err) {
 

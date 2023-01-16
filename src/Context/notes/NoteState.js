@@ -11,7 +11,7 @@ const NoteState = (props) => {
         /*API CALL;*/
         const response = await fetch(`${host}/api/marks/getmarks`,{
             method: 'GET',
-            headers: {'content-type': 'Application/JSON','auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNiYTdlOGQ5ZDAxZTAwNmYyMzUxYTAwIn0sImlhdCI6MTY3MzU0ODcwNH0.c5mR_qmnSSBFRkIOOv1eqPSYxvCxubT1R5qlzX92Fqs'}
+            headers: {'content-type': 'Application/JSON','auth-token': localStorage.getItem('token')}
         });
         const json = await response.json();
 
@@ -23,7 +23,7 @@ const NoteState = (props) => {
         /*API CALL;*/
         const response = await fetch(`${host}/api/marks/postmarks`,{
             method: 'POST',
-            headers: {'content-type': 'Application/JSON','auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNiYTdlOGQ5ZDAxZTAwNmYyMzUxYTAwIn0sImlhdCI6MTY3MzU0ODcwNH0.c5mR_qmnSSBFRkIOOv1eqPSYxvCxubT1R5qlzX92Fqs'},
+            headers: {'content-type': 'Application/JSON','auth-token': localStorage.getItem('token')},
             body: JSON.stringify({coursename, courseid, coursetype, grades,  credit,  facultyname, facultyid})
         });
         console.log(response);

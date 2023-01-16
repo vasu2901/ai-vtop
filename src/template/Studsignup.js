@@ -32,11 +32,9 @@ const Studsignup = () => {
           <hr />
           <label htmlFor="mail">Mail Id : </label><input type="text" id="mail" name="mail" style={{ marginLeft: "78px" }} />
           <hr />
-          <label htmlFor="contact">Contact No : </label><input type="text" id="contact" name="contact" style={{ marginLeft: "43px" }} />
-          <hr />
           <label htmlFor="Password">Password : </label><input type="password" id="Password" name="Password" style={{ marginLeft: "57px" }} />
           <hr />
-          <button type="button" id="Login" class="btn btn-outline-primary" style={{ marginLeft: "250px" }} onClick={check}>Submit</button>
+          <button type="button" id="Login" className="btn btn-outline-primary" style={{ marginLeft: "250px" }} onClick={check}>Submit</button>
         </form>
       </div>
     </div>

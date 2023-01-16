@@ -9,9 +9,9 @@ const Logadmin = () => {
         <p><center>Login for Admin</center></p>
         <hr />
         <form>
-          <label for="username">Username : </label><input type="text" id="Username" name="Username" style={{ marginLeft: "10px" }} />
+          <label htmlFor="username">Username : </label><input type="text" id="Username" name="Username" style={{ marginLeft: "10px" }} />
           <hr />
-          <label for="Password">Password : </label><input type="password" id="Password" name="Password" style={{ marginLeft: "10px" }} />
+          <label htmlFor="Password">Password : </label><input type="password" id="Password" name="Password" style={{ marginLeft: "10px" }} />
         </form>
         <hr />
         <p style={{ color: "blueviolet" }}>Not Registered?<Link to="/Adminsignup" style={{ paddingLeft: "2px" }}>SignUp</Link><button type="button" id="Login" class="btn btn-outline-success" style={{ marginLeft: "50px" }} >LogIn</button></p>
