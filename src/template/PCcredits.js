@@ -35,7 +35,7 @@ const PCcredits = () => {
             {
                 total2 += Number(note.credit)
             }
-        })
+        }) 
         alert(21 - Number(total2));
     }
     const count3 = () => {
@@ -53,20 +53,15 @@ const PCcredits = () => {
             <Sidebar />
             <div style={{ marginTop: "1%", marginLeft: "5%", backgroundColor: "white", borderTop: "5px solid blue", marginRight: "2%", paddingBottom: "1%" }} >
                 <h3 className="text-center">Program Core Credits</h3>
-                <hr />
-            <button className='btn  btn-primary' onClick={count0}>Know Program Core Credits</button>
-            <hr />
-            <button className='btn  btn-primary' onClick={count1}>Know Uninversity Core Credits</button>
-            <hr />
-            <button className='btn  btn-primary' onClick={count2}>Know Program Elective Credits</button>
-            <hr />
-            <button className='btn  btn-primary' onClick={count3}>Know University Elective Credits</button>
+                <hr />                
+            <div className="container my-3">       
+            <button className='btn  btn-outline-danger mx-2' onClick={count0}>Program Core Credits</button>
+            <button className='btn  btn-outline-danger mx-2' onClick={count1}>University Core Credits</button>
+            <button className='btn  btn-outline-danger mx-2' onClick={count2}> Program Elective Credits</button>
+            <button className='btn  btn-outline-danger mx-2' onClick={count3}> University Elective Credits</button>
+            </div>
             <hr />
             </div>
-            <script type='javascript'>
-                console.log("Hello world");
-                <h1>Hello</h1>
-            </script>
         </div>
     )
 }

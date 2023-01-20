@@ -9,7 +9,7 @@ const Pgcore = () => {
           <table style={{ border: "1", cellspacing: "0" }}>
             <thead>
               <tr>
-                <th rowspan={2}>
+                <th rowSpan={2}>
                   Course Structure:
                 </th>
                 <th >
@@ -84,7 +84,7 @@ const Pgcore = () => {
               <tr>
               <td>
 
-                CSD3001
+                CSD3009
 
               </td>
               <td>
@@ -145,7 +145,7 @@ const Pgcore = () => {
               <tr>
                 <td>
 
-                  CSE3001
+                  CSE2001
 
                 </td>
                 <td>
@@ -207,6 +207,7 @@ const Pgcore = () => {
               </tr>
               <tr>
                 <td>
+                  -
                 </td>
                 <td>
 

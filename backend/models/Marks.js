@@ -7,6 +7,14 @@ const marksSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user'
   },
+  name:{
+    type: String,
+    required: true
+  },
+  reg_no:{
+      type: String,
+      required: true
+  },
   coursename: {
     type: String,
     required: true

@@ -11,6 +11,8 @@ router.post('/createstud', [
     body('email').isEmail(),
     body('password').isLength({ min: 8 })
 ], async (req, res) => {
+    
+    let success = false;
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
         return res.status(400).json({ error: errors.array() });
@@ -33,11 +35,12 @@ router.post('/createstud', [
                 id: user._id
             }
         }
+        success = true;
         const authtoken = jwt.sign(data, JWT_SECRET);
-        res.json({ authtoken });
+        res.json({success, authtoken });
     }
     catch (err) {
-        return res.status(400).json({ error: err });
+        return res.status(400).json({ error: err, message: "User exists" });
     }
 })
 

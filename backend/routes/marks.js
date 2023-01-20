@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../models/User');
 const fetchUser = require("../MiddleWare/fetchUser");
 const Marks = require("../Models/Marks");
 
@@ -32,8 +33,10 @@ router.post('/postmarks', fetchUser, [
             return res.status(400).json({ error: errors.array() });
         }
         const { coursename, courseid, coursetype, grades, credit, facultyname, facultyid } = req.body;
+        const userID = req.user.id;
+        const user0 = await User.findById(userID).select("-password");
         const marks = new Marks({
-            stud: req.user.id, coursename, courseid, coursetype, grades, credit, facultyname, facultyid
+            stud: req.user.id,name: user0.name,reg_no: user0.reg_no , coursename, courseid, coursetype, grades, credit, facultyname, facultyid
         })
         const savedMarks = await marks.save();
         res.json(savedMarks);

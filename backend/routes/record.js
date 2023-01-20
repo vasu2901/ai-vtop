@@ -14,9 +14,9 @@ router.get('/', fetchUser, async (req, res) => {
                     return res.json(marks);
                 }
             }
-            if(req.body.faculty_no)
+            if(req.body.faculty_no && req.body.courseid)
             {
-                const marks = await Marks.find({ facultyid : req.body.faculty_no});
+                const marks = await Marks.find({ facultyid : req.body.faculty_no, courseid: req.body.courseid});
                 if (marks) {
                     return res.json(marks);
                 }

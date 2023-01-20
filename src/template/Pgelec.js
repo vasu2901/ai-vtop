@@ -10,7 +10,7 @@ const Pgelec = () => {
           <table style={{ border: "1", cellspacing: "0" }}>
             <thead>
               <tr>
-                <th rowspan={2}>
+                <th rowSpan={2}>
                   Course Structure:
                 </th>
                 <th >
@@ -84,7 +84,7 @@ const Pgelec = () => {
               </thead>
               <thead>
                 <tr align="center">
-                  <th colspan="4">
+                  <th colSpan={3} >
 
                     Core AI and ML
 
@@ -260,7 +260,7 @@ const Pgelec = () => {
               </tr>
               <thead>
                 <tr align="center">
-                  <th colspan="4">
+                  <th colSpan={3} >
 
 
                     AI, Neuroscience and Natural Intelligence
@@ -375,7 +375,7 @@ const Pgelec = () => {
               </tr>
               <thead>
                 <tr align="center">
-                  <th colspan="4">
+                  <th colSpan={3} >
 
                     Robotics
 
@@ -483,7 +483,7 @@ const Pgelec = () => {
               </tr>
               <thead>
                 <tr align="center">
-                  <th colspan="4">
+                  <th colSpan={3} >
 
                     Speech And Vision
 
@@ -631,7 +631,7 @@ const Pgelec = () => {
               </tr>
               <thead>
                 <tr align="center">
-                  <th colspan="4">
+                  <th colSpan={3} >
 
                     AI: Cyber, Gaming, Automation
 
@@ -754,7 +754,7 @@ const Pgelec = () => {
               </tr>
               <thead>
                 <tr align="center">
-                  <th colspan="4">
+                  <th colSpan={3} >
 
                     Future Skills
 
@@ -922,7 +922,7 @@ const Pgelec = () => {
               </tr>
               <thead>
                 <tr align="center">
-                  <th colspan="4">
+                  <th colSpan={3} >
 
                     Data Analytics
 
@@ -1070,7 +1070,7 @@ const Pgelec = () => {
               </tr>
               <thead>
                 <tr align="center">
-                  <th colspan="4">
+                  <th colSpan={3} >
 
                     Independent Study Elective
 
@@ -1085,9 +1085,9 @@ const Pgelec = () => {
                   Design Project
 
                 </td>
-                <td rowspan="5">
+                <td rowSpan={5} >
                 </td>
-                <td rowspan="5">
+                <td rowSpan={5} >
 
                   3
 
