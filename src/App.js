@@ -21,6 +21,7 @@ import PCcredits from './template/PCcredits';
 import Unelec from './template/Unelec';
 import Pgcore from './template/Pgcore';
 import Pgelec from './template/Pgelec';
+import Fachome from './template/Fachome';
 function App() {
   return (
     <div>
@@ -42,6 +43,7 @@ function App() {
             <Route path="/addMarks" element={<AddMarks />} />
             <Route path='/showMarks' element={<ShowMarks />} />
             <Route path='/remcredits' element={<PCcredits />} />
+            <Route path='/fachome' element={<Fachome />} />
           </Routes>
         </Router>
         </NoteState>

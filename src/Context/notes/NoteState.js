@@ -5,7 +5,7 @@ const NoteState = (props) => {
     const host = "http://localhost:5000";
     const notesInitial = []
     const [notes, setnotes] = useState(notesInitial);
-
+    const [teachnote,setteachnote] = useState(notesInitial);
 
     const fetchNotes = async () => {
         /*API CALL;*/
@@ -29,9 +29,19 @@ const NoteState = (props) => {
         console.log(response);
         alert("Marks added successfully");
     }
+    const facnotes = async(courseid, slot) =>{
+        const response = await fetch(`${host}/api/teacher`,{
+            method: 'POST',
+            headers: {'content-type': 'Application/JSON','auth-token': localStorage.getItem('token')},
+            body: JSON.stringify({courseid, slot})
+        });
+        const json = await response.json();
 
+        console.log(json);
+        setteachnote(json);   
+    }
     return (
-        <noteContext.Provider value={{ notes: notes, setnotes: setnotes, addNotes: addNotes, fetchNotes: fetchNotes }}>
+        <noteContext.Provider value={{ notes: notes, setnotes: setnotes, addNotes: addNotes, fetchNotes: fetchNotes,teachnote: teachnote,setteachnote:setteachnote, facnotes: facnotes }}>
             {props.children}
         </noteContext.Provider >
     )

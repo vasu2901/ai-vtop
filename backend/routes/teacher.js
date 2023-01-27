@@ -3,11 +3,11 @@ const fetchUser = require('../middleware/fetchUser');
 const Marks = require('../Models/Marks');
 const User = require('../models/User');
 const router = express.Router();
-router.get('/', fetchUser, async (req, res) => {
+router.post('/', fetchUser, async (req, res) => {
     try {
         const userID = req.user.id;
         const user = await User.findById(userID).select("-password");
-        const marks = await Marks.find({facultyname : user.name});
+        const marks = await Marks.find({facultyname : user.name, courseid: req.body.courseid, slot: req.body.slot});
         if (marks) {
             return res.json(marks);
         }
