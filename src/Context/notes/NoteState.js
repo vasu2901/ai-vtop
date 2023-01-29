@@ -19,24 +19,22 @@ const NoteState = (props) => {
         setnotes(json);
     };
 
-    const addNotes = async (coursename, courseid, coursetype, grades, credit, facultyname, facultyid) => {
+    const addNotes = async (coursename, courseid, coursetype,slot, grades, credit, facultyname, facultyid) => {
         /*API CALL;*/
         const response = await fetch(`${host}/api/marks/postmarks`,{
             method: 'POST',
             headers: {'content-type': 'Application/JSON','auth-token': localStorage.getItem('token')},
-            body: JSON.stringify({coursename, courseid, coursetype, grades,  credit,  facultyname, facultyid})
+            body: JSON.stringify({coursename, courseid, coursetype,slot, grades,  credit,  facultyname, facultyid})
         });
         console.log(response);
         alert("Marks added successfully");
     }
-    const facnotes = async(courseid, slot) =>{
+    const facnotes = async() =>{
         const response = await fetch(`${host}/api/teacher`,{
             method: 'POST',
             headers: {'content-type': 'Application/JSON','auth-token': localStorage.getItem('token')},
-            body: JSON.stringify({courseid, slot})
         });
         const json = await response.json();
-
         console.log(json);
         setteachnote(json);   
     }

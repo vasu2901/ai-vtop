@@ -7,7 +7,7 @@ router.post('/', fetchUser, async (req, res) => {
     try {
         const userID = req.user.id;
         const user = await User.findById(userID).select("-password");
-        const marks = await Marks.find({facultyname : user.name, courseid: req.body.courseid, slot: req.body.slot});
+        const marks = await Marks.find({ facultyname: user.name });
         if (marks) {
             return res.json(marks);
         }

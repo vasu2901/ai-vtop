@@ -1,23 +1,45 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import noteContext from '../Context/notes/noteContext'
-import Markstable from './Markstable'
 const Fachome = () => {
   const context = useContext(noteContext);
   const { teachnote, facnotes } = context;
   const [search, setsearch] = useState({ courseid: "", slot: "" })
   const handleClick = (e) => {
     e.preventDefault();
-    facnotes(search.courseid, search.slot);
+    const boxes = document.getElementsByClassName(search.courseid+search.slot);
+    console.log(boxes.length);
+    for (let i = 0; i < boxes.length; i++) {
+      boxes[i].style.backgroundColor = "red";
+      boxes[i].style.color = "white";
+    }
   }
+  useEffect(() => {
+    facnotes();
+  }, [])
+  const renderCars = (teachnote, index = 0) => {
+    return (
+      <tr key={index} className={teachnote.courseid+teachnote.slot}>
+        <td>{index + 1}</td>
+        <td className={teachnote.name}>{teachnote.name}</td>
+        <td className={teachnote.reg_no}>{teachnote.reg_no}</td>
+        <td>{teachnote.courseid}</td>
+        <td className={teachnote.coursename}>{teachnote.coursename}</td>
+        <td className={teachnote.slot}>{teachnote.slot}</td>
+        <td className={teachnote.grades}>{teachnote.grades}</td>
+        <td className={teachnote.credit}>{teachnote.credit}</td>
+      </tr>
+    )
+  }
+
   const onchange = (e) => {
     console.log({ [e.target.name]: e.target.value })
     setsearch({ ...search, [e.target.name]: e.target.value })
   }
   let history = useNavigate();
-  const onClick = (e) =>{
+  const onClick = (e) => {
     e.preventDefault();
-    if(localStorage.getItem('token')){
+    if (localStorage.getItem('token')) {
       localStorage.removeItem('token');
       history("/facultylogin");
     }
@@ -44,12 +66,28 @@ const Fachome = () => {
           <button type="button" id="Login" className="btn btn-outline-danger" style={{ marginLeft: "50px" }} onClick={handleClick}>Submit</button>
         </div>
       </form>
-      <div className='row my-3' >
-        {teachnote.map((note) => {
-          return <Markstable key={note._id} note={note} />;
-        })}
+      <div className='container my-3'>
+        <table>
+          <thead>
+            <tr>
+              <th>S. No</th>
+              <th>Name</th>
+              <th>Reg No</th>
+              <th>Courseid</th>
+              <th>Coursename</th>
+              <th>Slot</th>
+              <th>Grades</th>
+              <th>Credit</th>
+              <hr />
+            </tr>
+          </thead>
+          <tbody>
+            {
+              teachnote.map(renderCars)
+            }
+          </tbody>
+        </table>
       </div>
-
     </div>
   )
 }
