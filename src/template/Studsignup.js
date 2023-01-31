@@ -14,10 +14,11 @@ const Studsignup = () => {
             },
             body: JSON.stringify({name: details.name, reg_no: details.reg_no,email: details.mail, password: details.Password})
         });
+        
         const json = await response.json();
         if(json.success)
         {
-            history("/studentlogin");
+            history("/facultylogin");
             alert("Please Login");
         }
         else{
@@ -33,7 +34,7 @@ const Studsignup = () => {
       <div style={{ color: "blue", backgroundColor: "white", opacity: "0.81245", marginLeft: "375px", marginRight: "375px", marginBottom: "50px", marginTop: "17px", borderTop: "5px solid blue", borderRadius: "10px", fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',' Geneva', 'Verdana', 'sans-serif'", paddingBottom: "5px", paddingLeft: "5px", fontWeight: "bold" }}>
         <p className='text-center'> SignUp for Students</p>
         <hr />
-        <form claasName='container'>
+        <form className='container'>
           <label htmlFor="name">Name : </label><input type="text" id="name" name="name"value={details.name} style={{ marginLeft: "84px" }} onChange={onChange}/>
           <hr />
           <label htmlFor="reg_no">Registration No : </label><input type="text" id="reg_no" value={details.reg_no} name="reg_no" onChange={onChange} style={{ marginLeft: "10px" }} />

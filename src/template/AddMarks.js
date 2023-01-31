@@ -303,19 +303,11 @@ const AddMarks = () => {
             <option value="4">Four</option>
           </select>
           <hr />
-          <select className="form-select" name='facultyname' aria-label="Default select example" style={{ backgroundColor: "#007FFF", color: "white" }} onChange={onchange}>
-            <option defaultValue>Name of the Faculty</option>
-            <option value="Raja Soundaran">Raja Soundaran</option>
-            <option value="Ashok Patel">Ashok Patel</option>
-            <option value="Sashmita Padhy">Sashmita Padhy</option>
-          </select>
+          <label htmlFor="facultyname">Name of the Faculty : </label><input type="text" id="facultyname" name="facultyname" value={note.facultyname} style={{ marginLeft: "10px" }} onChange={onchange}/>
+
           <hr />
-          <select className="form-select" name='facultyid' aria-label="Default select example" style={{ backgroundColor: "#007FFF", color: "white" }} onChange={onchange}>
-            <option defaultValue>Faculty Id</option>
-            <option value="100055">100055</option>
-            <option value="100155">100155</option>
-            <option value="100255">100255</option>
-          </select>
+          <label htmlFor="facultyid">FacultyId : </label><input type="text" id="facultyid" name="facultyid" value={note.facultyid} style={{ marginLeft: "10px" }} onChange={onchange}/>
+
           <hr />
           <button type="submit" className="btn btn-outline-primary" onClick={handleClick} onChange={onchange}>Submit</button>
         </div>

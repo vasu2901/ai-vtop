@@ -7,7 +7,12 @@ const Fachome = () => {
   const [search, setsearch] = useState({ courseid: "", slot: "" })
   const handleClick = (e) => {
     e.preventDefault();
-    const boxes = document.getElementsByClassName(search.courseid+search.slot);
+    // const all = document.getElementsByClassName();
+    // for (let i = 0; i < all.length; i++) {
+    //   all[i].style.backgroundColor = "transparent";
+    //   all[i].style.color = "black";
+    // }
+    const boxes = document.getElementsByClassName(`${search.courseid+search.slot}`);
     console.log(boxes.length);
     for (let i = 0; i < boxes.length; i++) {
       boxes[i].style.backgroundColor = "red";
