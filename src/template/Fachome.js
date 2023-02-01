@@ -12,11 +12,35 @@ const Fachome = () => {
     //   all[i].style.backgroundColor = "transparent";
     //   all[i].style.color = "black";
     // }
-    const boxes = document.getElementsByClassName(`${search.courseid+search.slot}`);
-    console.log(boxes.length);
-    for (let i = 0; i < boxes.length; i++) {
-      boxes[i].style.backgroundColor = "red";
-      boxes[i].style.color = "white";
+    const filter0 = search.courseid;
+    const filter1 = search.slot;
+    console.log(filter0)
+    console.log( filter1);
+    const myTable = document.getElementById('myTable');
+    const tr = myTable.getElementsByTagName('tr');
+    if (filter0 !== '' && filter1 !== '') {
+      for (let index = 0; index < tr.length; index++) {
+        const td0 = tr[index].getElementsByTagName('td')[3];
+        const td1 = tr[index].getElementsByTagName('td')[5];
+
+        if (td0 && td1) {
+          let txt1 = td0.textContent || td0.innerHTML;
+          let txt2 = td1.textContent || td1.innerHTML;
+          if (txt1 === filter0 && txt2 === filter1) {
+            tr[index].style.display = "";
+          }
+          else {
+            tr[index].style.display = "none";
+          }
+        }
+      }
+    }
+    else {
+      for (let ind = 0; ind < tr.length; ind++) {
+        tr[ind].style.display = "";
+      }
+
+
     }
   }
   useEffect(() => {
@@ -24,7 +48,7 @@ const Fachome = () => {
   }, [])
   const renderCars = (teachnote, index = 0) => {
     return (
-      <tr key={index} className={teachnote.courseid+teachnote.slot}>
+      <tr key={index} className={teachnote.courseid + teachnote.slot}>
         <td>{index + 1}</td>
         <td className={teachnote.name}>{teachnote.name}</td>
         <td className={teachnote.reg_no}>{teachnote.reg_no}</td>
@@ -60,9 +84,9 @@ const Fachome = () => {
       </div >
       <form>
         <div style={{ color: 'red', backgroundColor: 'white', marginLeft: '400px', marginRight: "400px", marginTop: " 15px", borderTop: "5px solid red", borderRadius: " 10px", fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif", paddingBottom: "5px", paddingLeft: " 5px", fontWeight: "bold" }}>
-          <p><center>Search for Record</center></p>
+          <p className='text-center'>Search for Record</p>
           <hr />
-          <form>
+          <form className='text-center'>
             <label htmlFor="courseid">Courseid : </label><input type="text" id="courseid" name="courseid" value={search.courseid} style={{ marginLeft: "10px" }} onChange={onchange} />
             <hr />
             <label htmlFor="slot">Slot : </label><input type="text" id="slot" name="slot" value={search.slot} style={{ marginLeft: "10px" }} onChange={onchange} />
@@ -72,7 +96,7 @@ const Fachome = () => {
         </div>
       </form>
       <div className='container my-3'>
-        <table>
+        <table id='myTable'>
           <thead>
             <tr>
               <th>S. No</th>

@@ -24,10 +24,16 @@ const NoteState = (props) => {
         const response = await fetch(`${host}/api/marks/postmarks`,{
             method: 'POST',
             headers: {'content-type': 'Application/JSON','auth-token': localStorage.getItem('token')},
-            body: JSON.stringify({coursename, courseid, coursetype,slot, grades,  credit,  facultyname, facultyid})
+            body: JSON.stringify({coursename, courseid, coursetype, slot, grades,  credit,  facultyname, facultyid})
         });
-        console.log(response);
-        alert("Marks added successfully");
+        const json = await response.json();
+        if(json.success)
+        {
+            alert("Marks added successfully");
+        }
+        else{
+            alert("Failed to add marks");
+        }
     }
     const facnotes = async() =>{
         const response = await fetch(`${host}/api/teacher`,{

@@ -22,7 +22,6 @@ router.post('/postmarks', fetchUser, [
     body('coursename').exists(),
     body('courseid').exists(),
     body('coursetype').exists(),
-    body('slot').exists(),
     body('grades').exists(),
     body('credit').exists(),
     body('facultyname').exists(),
@@ -33,18 +32,14 @@ router.post('/postmarks', fetchUser, [
         if (!errors.isEmpty()) {
             return res.status(400).json({ error: errors.array() });
         }
-        const { coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid } = req.body;
+        const { coursename, courseid, coursetype,slot, grades, credit, facultyname, facultyid } = req.body;
         const userID = req.user.id;
         const user0 = await User.findById(userID).select("-password");
-        let savedMarks0 = await Marks.find({ coursename, courseid });
-        if (savedMarks0) { return res.status(404).send({ message: "Record Already Exists" }); }
-        else{
-            const marks = new Marks({
-                stud: req.user.id, name: user0.name, reg_no: user0.reg_no, coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid
-            })
-            const savedMarks = await marks.save();
-            res.json(savedMarks);
-        }
+        const marks = new Marks({
+            stud: req.user.id,name: user0.name,reg_no: user0.reg_no , coursename, courseid, coursetype,slot, grades, credit, facultyname, facultyid
+        })
+        const savedMarks = await marks.save();
+        res.json({success: "true",savedMarks: savedMarks});
     }
     catch (error) {
         console.log(error);
@@ -54,12 +49,11 @@ router.post('/postmarks', fetchUser, [
 router.post('/updatemarks/:id', fetchUser, async (req, res) => {
     try {
         const marks = {};
-        const { coursename, courseid, coursetype, slot, grades, facultyname, facultyid } = req.body;
+        const { coursename, courseid, coursetype, grades, facultyname, facultyid } = req.body;
 
         if (coursename) { marks.coursename = coursename }
         if (courseid) { marks.courseid = courseid }
         if (coursetype) { marks.coursetype = coursename }
-        if (slot) { marks.slot = slot }
         if (grades) { marks.grades = grades }
         if (facultyname) { marks.facultyname = facultyname }
         if (facultyid) { marks.facultyid = facultyid }

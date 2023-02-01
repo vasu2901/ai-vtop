@@ -1,16 +1,6 @@
-import React, {useEffect} from 'react'
+import React  from 'react'
 import Sidebar from './Sidebar'
-import { useNavigate } from 'react-router-dom'
 const Homepage = () => {
-  let history = useNavigate()
-  useEffect(() => {
-    if (localStorage.getItem('token') !== null) {
-      
-    }
-    else{
-        history('/studentlogin')
-    }
-  }, [])
   return (
     <div>
       <Sidebar />

@@ -27,11 +27,10 @@ const marksSchema = new Schema({
     type: String,
     required: true
   },
-  slot: {
+  slot:{
     type: String,
     required: true
   },
-  
   grades: {
     type: String,
     required: true

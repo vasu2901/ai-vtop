@@ -18,7 +18,7 @@ const Studsignup = () => {
         const json = await response.json();
         if(json.success)
         {
-            history("/facultylogin");
+            history("/studentlogin");
             alert("Please Login");
         }
         else{

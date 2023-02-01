@@ -1,8 +1,7 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState} from 'react'
 import Sidebar from './Sidebar'
 import notecontext from '../Context/notes/noteContext'
 const AddMarks = () => {
-
   const context = useContext(notecontext);
   const { addNotes } = context;
   const [note, setnote] = useState({ coursename: "", courseid: "", coursetype: "",slot: "", grades: "", credit: "", facultyname: "", facultyid: "" })
