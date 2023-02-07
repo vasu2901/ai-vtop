@@ -5,13 +5,13 @@ const NoteState = (props) => {
     const host = "http://localhost:5000";
     const notesInitial = []
     const [notes, setnotes] = useState(notesInitial);
-    const [teachnote,setteachnote] = useState(notesInitial);
-
+    const [teachnote, setteachnote] = useState(notesInitial);
+    const [tl, settl] = useState(0);
     const fetchNotes = async () => {
         /*API CALL;*/
-        const response = await fetch(`${host}/api/marks/getmarks`,{
+        const response = await fetch(`${host}/api/marks/getmarks`, {
             method: 'GET',
-            headers: {'content-type': 'Application/JSON','auth-token': localStorage.getItem('token')}
+            headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') }
         });
         const json = await response.json();
 
@@ -19,33 +19,70 @@ const NoteState = (props) => {
         setnotes(json);
     };
 
-    const addNotes = async (coursename, courseid, coursetype,slot, grades, credit, facultyname, facultyid) => {
+    const addNotes = async (coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid) => {
         /*API CALL;*/
-        const response = await fetch(`${host}/api/marks/postmarks`,{
+        const response = await fetch(`${host}/api/marks/postmarks`, {
             method: 'POST',
-            headers: {'content-type': 'Application/JSON','auth-token': localStorage.getItem('token')},
-            body: JSON.stringify({coursename, courseid, coursetype, slot, grades,  credit,  facultyname, facultyid})
+            headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') },
+            body: JSON.stringify({ coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid })
         });
         const json = await response.json();
-        if(json.success)
-        {
+        if (json.success) {
             alert("Marks added successfully");
         }
-        else{
+        else {
             alert("Failed to add marks");
         }
     }
-    const facnotes = async() =>{
-        const response = await fetch(`${host}/api/teacher`,{
+    const facnotes = async () => {
+        const response = await fetch(`${host}/api/teacher`, {
             method: 'POST',
-            headers: {'content-type': 'Application/JSON','auth-token': localStorage.getItem('token')},
+            headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') },
         });
         const json = await response.json();
         console.log(json);
-        setteachnote(json);   
+        setteachnote(json);
+    }
+    const adminnotes0 = async () => {
+        const response = await fetch(`${host}/api/record`, {
+            method: 'GET',
+            headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') },
+        });
+        const json = await response.json();
+        console.log(json);
+        setteachnote(json);
+        settl(Object.keys(json).length)
+    }
+    const deletenote = async (id) => {
+        const response = await fetch(`${host}/api/marks/deletemarks/${id}`, {
+            method: 'DELETE',
+            headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') },
+        });
+        const json = await response.json();
+        console.log(json.marks);
+        setnotes(json.marks);
+    }
+    const updateNotes = async (id,coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid) => {
+        /*API CALL;*/
+        console.log("what is this",id.id,id.coursename, courseid, coursetype, slot, grades, id.credit, facultyname, facultyid)
+        coursename = id.coursename
+        courseid = id.courseid
+        const response = await fetch(`${host}/api/record/updatemarks/${id}`, {
+            method: 'POST',
+            headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') },
+            body: JSON.stringify({coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid })
+        });
+        const json = await response.json();
+        if (json.success) {
+            console.log(json)
+            alert("Marks updated successfully");
+        }
+        else {
+            alert("Failed to Update marks");
+        }
     }
     return (
-        <noteContext.Provider value={{ notes: notes, setnotes: setnotes, addNotes: addNotes, fetchNotes: fetchNotes,teachnote: teachnote,setteachnote:setteachnote, facnotes: facnotes }}>
+        <noteContext.Provider value={{ notes: notes, setnotes: setnotes, addNotes: addNotes, fetchNotes: fetchNotes, teachnote: teachnote, setteachnote: setteachnote, facnotes: facnotes, adminnotes0: adminnotes0, deletenote: deletenote, tl: tl, updateNotes: updateNotes }}>
             {props.children}
         </noteContext.Provider >
     )

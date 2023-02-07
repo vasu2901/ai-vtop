@@ -24,12 +24,12 @@ const Logfac = () => {
         setlogin({...login, [e.target.name]: e.target.value})
     }
     return (
-        <div>
+        <div className='center'>
             <Navbar />
-            <div style={{ color: 'red', backgroundColor: 'white', marginLeft: '400px', marginRight: "400px", marginTop: " 15px", borderTop: "5px solid red", borderRadius: " 10px", fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif", paddingBottom: "5px", paddingLeft: " 5px", fontWeight: "bold" }}>
-                <p><center>Login for Faculty</center></p>
+            <div className='container mx-auto' style={{ color: 'red',margin:"1%", backgroundColor: 'white', marginTop: " 15px",maxWidth: "35%", borderTop: "5px solid red", borderRadius: " 10px", fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif", fontWeight: "bold" }}>
+                <p className='text-center'>Login for Faculty</p>
                 <hr />
-                <form>
+                <form className='text-center'>
                     <label htmlFor="username">Username : </label><input type="text" id="Username" name="Username" style={{ marginLeft: "10px" }} onChange={onChange}/>
                     <hr />
                     <label htmlFor="Password">Password : </label><input type="password" id="Password" name="Password" style={{ marginLeft: "10px" }} onChange={onChange} />

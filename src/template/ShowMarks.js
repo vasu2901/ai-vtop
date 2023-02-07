@@ -15,7 +15,7 @@ const ShowMarks = () => {
     else{
         history('/studentlogin')
     }
-  }, [])
+  }, [fetchNotes, history])
   return (
     <div>
       <Sidebar />

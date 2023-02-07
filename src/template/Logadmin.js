@@ -17,7 +17,7 @@ const Logadmin = () => {
         if(json.success)
         {
             localStorage.setItem('token', json.authtoken);
-            history("/homewebsite");
+            history("/adminhome");
         }
     }
     const onchange = (e) =>{
@@ -35,7 +35,7 @@ const Logadmin = () => {
           <label htmlFor="Password">Password : </label><input type="password" id="Password" name="Password" value={login.Password} style={{ marginLeft: "10px" }} onChange={onchange} />
         </form>
         <hr />
-        <p style={{ color: "blueviolet" }}>Not Registered?<Link to="/Adminsignup" style={{ paddingLeft: "2px" }}>SignUp</Link><button type="submit" id="Login" class="btn btn-outline-success" style={{ marginLeft: "50px" }} onSubmit={user}>LogIn</button></p>
+        <p style={{ color: "blueviolet" }}>Not Registered?<Link to="/Adminsignup" style={{ paddingLeft: "2px" }}>SignUp</Link><button type="submit" id="Login" className="btn btn-outline-success" style={{ marginLeft: "50px" }} onClick={user}>LogIn</button></p>
       </div> </div>
   )
 }

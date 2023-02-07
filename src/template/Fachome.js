@@ -3,19 +3,30 @@ import { Link, useNavigate } from 'react-router-dom'
 import noteContext from '../Context/notes/noteContext'
 const Fachome = () => {
   const context = useContext(noteContext);
+  let history = useNavigate();
+  const onClick = (e) => {
+    e.preventDefault();
+    if (localStorage.getItem('token')) {
+      localStorage.removeItem('token');
+      history("/facultylogin");
+    }
+  }
   const { teachnote, facnotes } = context;
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      facnotes()
+    }
+    else {
+      history('/facultylogin')
+    }
+  }, [])
   const [search, setsearch] = useState({ courseid: "", slot: "" })
   const handleClick = (e) => {
     e.preventDefault();
-    // const all = document.getElementsByClassName();
-    // for (let i = 0; i < all.length; i++) {
-    //   all[i].style.backgroundColor = "transparent";
-    //   all[i].style.color = "black";
-    // }
     const filter0 = search.courseid;
     const filter1 = search.slot;
     console.log(filter0)
-    console.log( filter1);
+    console.log(filter1);
     const myTable = document.getElementById('myTable');
     const tr = myTable.getElementsByTagName('tr');
     if (filter0 !== '' && filter1 !== '') {
@@ -43,9 +54,6 @@ const Fachome = () => {
 
     }
   }
-  useEffect(() => {
-    facnotes();
-  }, [])
   const renderCars = (teachnote, index = 0) => {
     return (
       <tr key={index} className={teachnote.courseid + teachnote.slot}>
@@ -65,24 +73,15 @@ const Fachome = () => {
     console.log({ [e.target.name]: e.target.value })
     setsearch({ ...search, [e.target.name]: e.target.value })
   }
-  let history = useNavigate();
-  const onClick = (e) => {
-    e.preventDefault();
-    if (localStorage.getItem('token')) {
-      localStorage.removeItem('token');
-      history("/facultylogin");
-    }
-  }
   return (
     <div>
       <div className='container-expand-lg'>
         <nav className="navbar navbar-expand-fluid" style={{ height: "60px", backgroundColor: "#236fa1e2", zindex: "1" }}>
           <Link className="navbar-brand mx-3" to="/homewebsite"
             style={{ fontSize: "30px", fontFamily: "TimesNewRoman, Times, serif", color: "white" }}><strong>AI-VTOP</strong></Link>
-          <button className='btn btn-danger' onClick={onClick} style={{ marginRight: "2%" }}>Log Out</button>
+          <button className='btn btn-outline-danger' onClick={onClick} style={{ marginRight: "2%" }}>Log Out  <i className='fa fa-power-off'></i></button>
         </nav >
       </div >
-      <form>
         <div style={{ color: 'red', backgroundColor: 'white', marginLeft: '400px', marginRight: "400px", marginTop: " 15px", borderTop: "5px solid red", borderRadius: " 10px", fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif", paddingBottom: "5px", paddingLeft: " 5px", fontWeight: "bold" }}>
           <p className='text-center'>Search for Record</p>
           <hr />
@@ -94,20 +93,18 @@ const Fachome = () => {
           <hr />
           <button type="button" id="Login" className="btn btn-outline-danger" style={{ marginLeft: "50px" }} onClick={handleClick}>Submit</button>
         </div>
-      </form>
       <div className='container my-3'>
-        <table id='myTable'>
+        <table id='myTable' >
           <thead>
             <tr>
-              <th>S. No</th>
-              <th>Name</th>
-              <th>Reg No</th>
-              <th>Courseid</th>
-              <th>Coursename</th>
-              <th>Slot</th>
-              <th>Grades</th>
-              <th>Credit</th>
-              <hr />
+              <th style={{width: "10%"}}>S. No</th>
+              <th style={{width: "25%"}}>Name</th>
+              <th style={{width: "25%"}}>Reg No</th>
+              <th style={{width: "15%"}}>Courseid</th>
+              <th style={{width: "25%"}}>Coursename</th>
+              <th style={{width: "25%"}}>Slot</th>
+              <th style={{width: "10%"}}>Grades</th>
+              <th style={{width: "10%"}}>Credit</th>
             </tr>
           </thead>
           <tbody>

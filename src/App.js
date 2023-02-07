@@ -22,6 +22,9 @@ import Unelec from './template/Unelec';
 import Pgcore from './template/Pgcore';
 import Pgelec from './template/Pgelec';
 import Fachome from './template/Fachome';
+import Adminhome from './template/AdminHome';
+import Studrecords from './Studrecords';
+import { Updatemarks } from './template/Updatemarks';
 function App() {
   return (
     <div>
@@ -35,7 +38,7 @@ function App() {
             <Route path="/Studentsignup" element={<Studsignup />}></Route>
             <Route path="/Facultysignup" element={<Facaignup />}></Route>
             <Route path="/Adminsignup" element={<Adminsignup />} />
-            <Route path= "/homewebsite" element={<Homepage />} />
+            <Route path="/homewebsite" element={<Homepage />} />
             <Route path="/unicore" element={<Uncore />} />
             <Route path="/unelec" element={<Unelec />} />
             <Route path="/pgcore" element={<Pgcore />} />
@@ -44,11 +47,14 @@ function App() {
             <Route path='/showMarks' element={<ShowMarks />} />
             <Route path='/remcredits' element={<PCcredits />} />
             <Route path='/fachome' element={<Fachome />} />
+            <Route path='/adminhome' element={<Adminhome />}/>
+            <Route path='/studrecord' element={<Studrecords />} />
+            <Route path ='/updatemarks' element={<Updatemarks />} />
           </Routes>
         </Router>
-        </NoteState>
-        
-      </div>
+      </NoteState>
+
+    </div>
   )
 }
 

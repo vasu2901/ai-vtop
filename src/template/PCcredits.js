@@ -15,8 +15,8 @@ const PCcredits = () => {
                 total0 += Number(note.credit)
             }
         })
-        alert(69 - Number(total0));
-        console.log(69 - Number(total0));
+        alert(55 - Number(total0));
+        console.log(55 - Number(total0));
     }
     const count1 = () => {
         let total1 = 0;
@@ -26,7 +26,7 @@ const PCcredits = () => {
                 total1 += Number(note.credit)
             }
         })
-        alert(55 - Number(total1));
+        alert(69 - Number(total1));
     }
     const count2 = () => {
         let total2 = 0;
@@ -36,7 +36,7 @@ const PCcredits = () => {
                 total2 += Number(note.credit)
             }
         }) 
-        alert(21 - Number(total2));
+        alert(15 - Number(total2));
     }
     const count3 = () => {
         let total3 = 0;
@@ -46,7 +46,7 @@ const PCcredits = () => {
                 total3 += Number(note.credit)
             }
         })
-        alert(15 - Number(total3));
+        alert(21 - Number(total3));
     }
     return (
         <div>

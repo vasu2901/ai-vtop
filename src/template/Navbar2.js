@@ -18,7 +18,7 @@ const Navbar2 = () => {
         </button>
         <Link className="navbar-brand mx-3" to="/homewebsite"
             style={{fontSize: "30px", fontFamily: "TimesNewRoman, Times, serif",color: "white"}}><strong>AI-VTOP</strong></Link>
-        <button className='btn btn-danger' onClick={onClick} style={{ marginRight: "2%" }}>Log Out</button>
+        <button className='btn btn-dark' onClick={onClick} style={{ marginRight: "2%"}}>Log Out <i className='fa fa-power-off'></i></button>
     </nav >
     </div >
   )
