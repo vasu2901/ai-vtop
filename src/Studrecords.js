@@ -5,7 +5,6 @@ import Navbar3 from './template/Navbar3'
 const Studrecords = () => {
     const [search, setsearch] = useState({ reg_no: "", facultyid: "", courseid: "" });
     const context = useContext(noteContext);
-    const history = useNavigate('')
     const navigate = useNavigate();
     const sendid = (id0) => {
         navigate('/updatemarks', {
@@ -114,7 +113,7 @@ const Studrecords = () => {
                 }}></i></td>
                 <td style={{ border: "1px solid", }} ><i className='fa fa-trash' onClick={() => {
                     deletenote(teachnote._id);
-                    history('')
+                    navigate("/adminhome")
                 }}></i></td>
             </tr>
         )

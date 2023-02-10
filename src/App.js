@@ -25,6 +25,9 @@ import Fachome from './template/Fachome';
 import Adminhome from './template/AdminHome';
 import Studrecords from './Studrecords';
 import { Updatemarks } from './template/Updatemarks';
+import PECredits from './template/PECredits';
+import UCCredits from './template/UCCredits';
+import UECredits from './template/UECredits';
 function App() {
   return (
     <div>
@@ -45,11 +48,14 @@ function App() {
             <Route path="/pgelec" element={<Pgelec />} />
             <Route path="/addMarks" element={<AddMarks />} />
             <Route path='/showMarks' element={<ShowMarks />} />
-            <Route path='/remcredits' element={<PCcredits />} />
+            <Route path='/pccredits' element={<PCcredits />} />
             <Route path='/fachome' element={<Fachome />} />
             <Route path='/adminhome' element={<Adminhome />}/>
             <Route path='/studrecord' element={<Studrecords />} />
             <Route path ='/updatemarks' element={<Updatemarks />} />
+            <Route path ='/pecredits' element={<PECredits />} />
+            <Route path ='/uccredits' element={<UCCredits />} />
+            <Route path ='/uecredits' element={<UECredits />} />
           </Routes>
         </Router>
       </NoteState>

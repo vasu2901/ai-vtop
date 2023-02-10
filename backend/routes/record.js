@@ -45,7 +45,7 @@ router.delete('/deletemarks/:id', fetchUser, async (req, res) => {
 
         marks = await Marks.findByIdAndDelete(req.params.id)
         const marks0 = await Marks.find()
-        res.json({ "Success": "marks has been deleted", marks: marks0 });
+        res.json({success: true, marks: marks0 });
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error");

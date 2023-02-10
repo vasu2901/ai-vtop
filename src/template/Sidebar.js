@@ -8,7 +8,7 @@ const Sidebar = () => {
         {
             history("/studentlogin");
         }
-    }, [history])
+    }, [])
     
     return (
         <><div>
@@ -103,7 +103,11 @@ const Sidebar = () => {
                             <li className="dropdown-header">
                                 <h5>Credits Remaining</h5>
                             </li>
-                            <li><Link className="dropdown-item" to="/remcredits">Credits Remaining</Link></li>
+                            <li><Link className="dropdown-item" to="/uccredits">University Core</Link></li>
+                            <li><Link className="dropdown-item" to="/pccredits">Program Core</Link></li>
+                            <li><Link className="dropdown-item" to="/pecredits">Program Elective</Link></li>
+                            
+                            <li><Link className="dropdown-item" to="/uecredits">University Elective</Link></li>
                         </ul>
                     </div>
                     <div className="btn-group dropend">
@@ -224,7 +228,11 @@ const Sidebar = () => {
                             <li className="dropdown-header">
                                 <h5>Credits Remaining</h5>
                             </li>
-                            <li><Link className="dropdown-item" to="/remcredits">Credits Remaining</Link></li>
+                            <li><Link className="dropdown-item" to="/uccredits">University Core</Link></li>
+                            <li><Link className="dropdown-item" to="/pccredits">Program Core</Link></li>
+                            <li><Link className="dropdown-item" to="/pecredits">Program Elective</Link></li>
+                            
+                            <li><Link className="dropdown-item" to="/uecredits">University Elective</Link></li>
                         </ul>
                     </div>
                 </div>

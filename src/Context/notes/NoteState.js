@@ -14,9 +14,8 @@ const NoteState = (props) => {
             headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') }
         });
         const json = await response.json();
-
-        console.log(json);
         setnotes(json);
+        return json;
     };
 
     const addNotes = async (coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid) => {
@@ -59,8 +58,14 @@ const NoteState = (props) => {
             headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') },
         });
         const json = await response.json();
-        console.log(json.marks);
-        setnotes(json.marks);
+        if(!json.success)
+        {
+            alert("Record Deleted Successfully");
+        }
+        else
+        {
+            alert("Sorry some error occured")
+        }
     }
     const updateNotes = async (id,coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid) => {
         /*API CALL;*/
