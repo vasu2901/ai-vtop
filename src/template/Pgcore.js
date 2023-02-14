@@ -4,9 +4,8 @@ const Pgcore = () => {
   return (
     <div>
       <Sidebar />
-      <div className="container my-3" style={{ marginTop: "75px" }}>
-        <center>
-          <table style={{ border: "1", cellspacing: "0" }}>
+      <div className="container my-3 mx-auto" style={{ marginTop: "75px", background: "white" }}>
+          <table className='mx-auto my-2' style={{ border: "1", cellspacing: "0" }}>
             <thead>
               <tr>
                 <th rowSpan={2}>
@@ -66,7 +65,7 @@ const Pgcore = () => {
 
 
           <div className="table" style={{ paddingTop: "5px", paddingBottom: "5px", paddingLeft: "10px", paddingRight: "10px", marginTop: "75px" }}>
-            <table style={{ cellspacing: "0" }}>
+            <table className='mx-auto' style={{ cellspacing: "0" }}>
               <thead>
                 <tr align="center">
                   <th colSpan={3} style={{ backgroundColor: "#2980b9" }}>
@@ -81,6 +80,7 @@ const Pgcore = () => {
                   </th>
                 </tr>
               </thead>
+              <tbody>
               <tr>
               <td>
 
@@ -370,10 +370,9 @@ const Pgcore = () => {
 
                 </td>
               </tr>
-
+              </tbody>
             </table>
           </div>
-        </center>
       </div>
     </div>
   )

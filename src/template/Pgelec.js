@@ -5,114 +5,114 @@ const Pgelec = () => {
   return (
     <div>
       <Sidebar />
-      <div className="container my-3" style={{ marginTop: "75px" }}>
-        <center>
-          <table style={{ border: "1", cellspacing: "0" }}>
+      <div className="container my-3" style={{ marginTop: "75px", background: "white" }}>
+        <table className='mx-auto' style={{ border: "1", cellspacing: "0" }}>
+          <thead>
+            <tr>
+              <th rowSpan={2}>
+                Course Structure:
+              </th>
+              <th >
+                Programme Core (PC)
+
+              </th>
+              <th >
+
+                Programme Elective (PE)
+
+              </th>
+              <th >
+                University Core (UC)
+
+              </th>
+              <th >
+
+                University Elective (UE)
+
+              </th>
+              <th style={{ width: "100", backgroundColor: "#2980b9" }}>
+                Total
+
+              </th>
+            </tr>
+            <tr>
+              <td >
+
+                55
+
+              </td>
+              <td >
+
+                15
+
+              </td>
+              <td >
+
+                69
+
+              </td>
+              <td >
+
+                21
+
+              </td>
+              <td style={{ width: "100", backgroundColor: "#2980b9" }}>
+                160
+
+              </td>
+            </tr>
+          </thead>
+        </table>
+
+
+        <div className="table" style={{ paddingTop: "5px", paddingBottom: "5px", paddingLeft: "10px", paddingRight: "10px", marginTop: "75px" }}>
+          <table className='mx-auto' style={{ cellspacing: "0" }}>
             <thead>
-              <tr>
-                <th rowSpan={2}>
-                  Course Structure:
-                </th>
-                <th >
-                  Programme Core (PC)
+              <tr align="center">
+                <th colSpan={3} style={{ backgroundColor: "#2980b9" }}>
+
+                  PROGRAM ELECTIVE
 
                 </th>
-                <th >
+                <th style={{ backgroundColor: "#2980b9" }}>
 
-                  Programme Elective (PE)
-
-                </th>
-                <th >
-                  University Core (UC)
+                  Any 15 Credits
 
                 </th>
-                <th >
-
-                  University Elective (UE)
-
-                </th>
-                <th style={{ width: "100", backgroundColor: "#2980b9" }}>
-                  Total
-
-                </th>
-              </tr>
-              <tr>
-                <td >
-
-                  55
-
-                </td>
-                <td >
-
-                  15
-
-                </td>
-                <td >
-
-                  69
-
-                </td>
-                <td >
-
-                  21
-
-                </td>
-                <td style={{ width: "100", backgroundColor: "#2980b9" }}>
-                  160
-
-                </td>
               </tr>
             </thead>
-          </table>
+            <tbody>
+              {/* <thead> */}
+              <tr align="center">
+                <th colSpan={3} >
 
+                  Core AI and ML
 
-          <div className="table" style={{ paddingTop: "5px", paddingBottom: "5px", paddingLeft: "10px", paddingRight: "10px", marginTop: "75px" }}>
-            <table style={{ cellspacing: "0" }}>
-              <thead>
-                <tr align="center">
-                  <th colSpan={3} style={{ backgroundColor: "#2980b9" }}>
+                </th>
+              </tr>
 
-                    PROGRAM ELECTIVE
-
-                  </th>
-                  <th style={{ backgroundColor: "#2980b9" }}>
-
-                    Any 15 Credits
-
-                  </th>
-                </tr>
-              </thead>
-              <thead>
-                <tr align="center">
-                  <th colSpan={3} >
-
-                    Core AI and ML
-
-                  </th>
-                </tr>
-
-              </thead>
+              {/* </thead> */}
               <tr>
-              <td>
+                <td>
 
-                CSA3004
+                  CSA3004
 
-              </td>
-              <td>
+                </td>
+                <td>
 
-                Data Visualization
+                  Data Visualization
 
-              </td>
-              <td>
+                </td>
+                <td>
 
-                LP
+                  LP
 
-              </td>
-              <td>
+                </td>
+                <td>
 
-                3
+                  3
 
-              </td>
+                </td>
               </tr>
               <tr>
                 <td>
@@ -258,17 +258,17 @@ const Pgelec = () => {
 
                 </td>
               </tr>
-              <thead>
-                <tr align="center">
-                  <th colSpan={3} >
+              {/* <thead> */}
+              <tr align="center">
+                <th colSpan={3} >
 
 
-                    AI, Neuroscience and Natural Intelligence
+                  AI, Neuroscience and Natural Intelligence
 
 
-                  </th>
-                </tr>
-              </thead>
+                </th>
+              </tr>
+              {/* </thead> */}
               <tr>
                 <td>
 
@@ -373,15 +373,15 @@ const Pgelec = () => {
 
                 </td>
               </tr>
-              <thead>
-                <tr align="center">
-                  <th colSpan={3} >
+              {/* <thead> */}
+              <tr align="center">
+                <th colSpan={3} >
 
-                    Robotics
+                  Robotics
 
-                  </th>
-                </tr>
-              </thead>
+                </th>
+              </tr>
+              {/* </thead> */}
 
               <tr>
                 <td>
@@ -481,15 +481,15 @@ const Pgelec = () => {
 
                 </td>
               </tr>
-              <thead>
-                <tr align="center">
-                  <th colSpan={3} >
+              {/* <thead> */}
+              <tr align="center">
+                <th colSpan={3} >
 
-                    Speech And Vision
+                  Speech And Vision
 
-                  </th>
-                </tr>
-              </thead>
+                </th>
+              </tr>
+              {/* </thead> */}
               <tr>
                 <td>
 
@@ -629,15 +629,15 @@ const Pgelec = () => {
 
                 </td>
               </tr>
-              <thead>
-                <tr align="center">
-                  <th colSpan={3} >
+              {/* <thead> */}
+              <tr align="center">
+                <th colSpan={3} >
 
-                    AI: Cyber, Gaming, Automation
+                  AI: Cyber, Gaming, Automation
 
-                  </th>
-                </tr>
-              </thead>
+                </th>
+              </tr>
+              {/* </thead> */}
               <tr>
                 <td>
                 </td>
@@ -752,15 +752,15 @@ const Pgelec = () => {
 
                 </td>
               </tr>
-              <thead>
-                <tr align="center">
-                  <th colSpan={3} >
+              {/* <thead> */}
+              <tr align="center">
+                <th colSpan={3} >
 
-                    Future Skills
+                  Future Skills
 
-                  </th>
-                </tr>
-              </thead>
+                </th>
+              </tr>
+              {/* </thead> */}
               <tr>
                 <td>
 
@@ -920,15 +920,15 @@ const Pgelec = () => {
 
                 </td>
               </tr>
-              <thead>
-                <tr align="center">
-                  <th colSpan={3} >
+              {/* <thead> */}
+              <tr align="center">
+                <th colSpan={3} >
 
-                    Data Analytics
+                  Data Analytics
 
-                  </th>
-                </tr>
-              </thead>
+                </th>
+              </tr>
+              {/* </thead> */}
               <tr>
                 <td>
 
@@ -1068,15 +1068,15 @@ const Pgelec = () => {
 
                 </td>
               </tr>
-              <thead>
-                <tr align="center">
-                  <th colSpan={3} >
+              {/* <thead> */}
+              <tr align="center">
+                <th colSpan={3} >
 
-                    Independent Study Elective
+                  Independent Study Elective
 
-                  </th>
-                </tr>
-              </thead>
+                </th>
+              </tr>
+              {/* </thead> */}
               <tr>
                 <td>
                 </td>
@@ -1129,8 +1129,9 @@ const Pgelec = () => {
 
                 </td>
               </tr>
-            </table>
-          </div></center>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   )

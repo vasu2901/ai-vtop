@@ -69,9 +69,7 @@ const NoteState = (props) => {
     }
     const updateNotes = async (id,coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid) => {
         /*API CALL;*/
-        console.log("what is this",id.id,id.coursename, courseid, coursetype, slot, grades, id.credit, facultyname, facultyid)
-        coursename = id.coursename
-        courseid = id.courseid
+        console.log("what is this",id,coursename, courseid, coursetype, slot, grades, id.credit, facultyname, facultyid)
         const response = await fetch(`${host}/api/record/updatemarks/${id}`, {
             method: 'POST',
             headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') },

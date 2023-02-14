@@ -8,6 +8,7 @@ const PCcredits = () => {
             headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') }
         });
         const json = await response.json();
+        console.log(json);
         const myTable = document.getElementById('myTable');
         const tr = myTable.getElementsByTagName('tr');
         let remaining = 55;
@@ -33,7 +34,7 @@ const PCcredits = () => {
         <div>
             <Sidebar />
             <div className='table mx-auto' >
-                <table className='mx-auto'>
+                <table className='mx-auto' id='myTable'>
                     <thead>
                         <tr >
                             <th>CourseId </th>
