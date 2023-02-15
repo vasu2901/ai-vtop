@@ -133,6 +133,7 @@ const Studrecords = () => {
                     <label htmlFor="reg_no">Reg. No. : </label><input type="text" id="reg_no" name="reg_no" value={search.reg_no} style={{ marginLeft: "10px" }} onChange={onchange} />
                     <hr />
                     <label htmlFor="facultyid">Faculty Id : </label><input type="text" id="facultyid" name="facultyid" value={search.facultyid} style={{ marginLeft: "10px" }} onChange={onchange} />
+                    <hr />
                     <label htmlFor="courseid">Course Id : </label><input type="text" id="courseid" name="courseid" value={search.courseid} style={{ marginLeft: "10px", marginTop: "5px" }} onChange={onchange} />
                 </form>
                 <hr />

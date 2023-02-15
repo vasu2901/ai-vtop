@@ -36,7 +36,7 @@ const Adminsignup = () => {
           <form >
             <label htmlFor="name">Name : </label><input type="text" id="name" name="name" value={details.name} onChange={onChange} style={{ marginLeft: "84px" }} />
             <hr />
-            <label htmlFor="reg_no">Employee Id : </label><input type="text" id="reg_no" name="reg_no"value={details.reg_no} onChange={onChange}style={{ marginLeft: "10px" }} />
+            <label htmlFor="reg_no">Employee Id : </label><input type="text" id="reg_no" name="reg_no"value={details.reg_no} onChange={onChange}style={{ marginLeft: "33px" }} />
             <hr />
             <label htmlFor="mail">Mail Id : </label><input type="text" id="mail" name="mail"value={details.mail} onChange={onChange}style={{ marginLeft: "78px" }} />
             <hr />

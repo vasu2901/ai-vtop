@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import noteContext from '../Context/notes/noteContext';
+import Navbar3 from './Navbar3';
 export const Updatemarks = () => {
     const location = useLocation();
     const history = useNavigate()
@@ -17,6 +18,7 @@ export const Updatemarks = () => {
     }
     return (
         <div>
+            <Navbar3 />
             <div className='container mx-auto' style={{ color: 'red', backgroundColor: 'white', maxWidth: "35%", marginTop: " 15px", borderTop: "5px solid red", borderRadius: " 10px", fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif", paddingBottom: "5px", paddingLeft: " 5px", fontWeight: "bold" }}>
                 <p className='text-center'>Update the Record</p>
                 <hr />

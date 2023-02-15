@@ -32,10 +32,10 @@ const Facaignup = () => {
       <div style={{ color: "red", backgroundColor: "white", opacity: "0.81245", marginLeft: "375px", marginRight: "375px", marginBottom: "50px", marginTop: "17px", borderTop: "5px solid blue", borderRadius: "10px", fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',' Geneva', 'Verdana', 'sans-serif'", paddingBottom: "5px", paddingLeft: "5px", fontWeight: "bold" }}>
         <p className='text-center'>SignUp for Faculty</p>
         <hr />
-        <form className='container'  onSubmit={check}>
+        <form className='container mx-auto'  onSubmit={check}>
           <label htmlFor="name">Name : </label><input type="text" id="name" name="name" value={details.name} style={{ marginLeft: "84px" }} onChange={onChange} />
           <hr />
-          <label htmlFor="reg_no">Registration No : </label><input type="text" id="reg_no" value={details.reg_no} name="reg_no" onChange={onChange} style={{ marginLeft: "10px" }} />
+          <label htmlFor="reg_no">Faculty Id : </label><input type="text" id="reg_no" value={details.reg_no} name="reg_no" onChange={onChange} style={{ marginLeft: "57px" }} />
           <hr />
           <label htmlFor="mail">Mail Id : </label><input type="text" id="mail" name="mail" value={details.mail} onChange={onChange} style={{ marginLeft: "78px" }} />
           <hr />
