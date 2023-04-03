@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import noteContext from '../Context/notes/noteContext'
 import Navbar3 from './Navbar3';
-import { render } from '@testing-library/react';
 
 const Facrecord = () => {
     const context = useContext(noteContext);
