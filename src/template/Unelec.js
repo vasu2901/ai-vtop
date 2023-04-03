@@ -70,7 +70,7 @@ const Unelec = () => {
 
 
                     <div className="table" style={{ paddingTop: "5px", paddingBottom: "5px", paddingLeft: "10px", paddingRight: "10px", marginTop: "75px" }}>
-                        <table className='mx-auto' style={{ cellspacing: "0" }}>
+                        <table className='mx-auto' style={{ cellspacing: "0"}}>
                             <thead>
                                 <tr >
                                     <th colSpan={3} style={{ backgroundColor: "#2980b9" }}>

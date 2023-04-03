@@ -23,7 +23,7 @@ router.get('/', fetchUser, async (req, res) => {
             else {
                 const marks = await Marks.find();
                 if (marks) {
-                    return res.json(marks);
+                    return res.json(marks); //this is for finding the marks of the students that we requested for.
                 }
             }
         }
@@ -33,7 +33,26 @@ router.get('/', fetchUser, async (req, res) => {
     }
     catch (error) {
         console.log(error);
-        return res.status(400).send({ message: "Invalid credentials" });
+        return res.status(400).send({ message: "Invalid credentials" }); // in the case if the admin has not logged in or made some wrong credentials. 
+    }
+})
+
+router.get('/failstud', fetchUser, async (req, res) => {
+    try {
+        try {
+            const marks = await Marks.find({ grades: "F" });
+            if (marks) {
+                return res.json({success: true, marks: marks});
+            }
+            else {
+                return res.json({success: false, message: "No such record found" }); // this is for finding the record of the students who got failed in the exams.
+            }
+        } catch (error) {
+            res.send({success: false, message: error }); // this is for sending the error. 
+        }
+    }
+    catch (err) {
+        res.status(500).send(err); // this is for sending the error.
     }
 })
 
@@ -45,7 +64,7 @@ router.delete('/deletemarks/:id', fetchUser, async (req, res) => {
 
         marks = await Marks.findByIdAndDelete(req.params.id)
         const marks0 = await Marks.find()
-        res.json({success: true, marks: marks0 });
+        res.json({ success: true, marks: marks0 });
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error");
@@ -70,8 +89,8 @@ router.post('/updatemarks/:id', fetchUser, async (req, res) => {
         savedmarks = await Marks.findByIdAndUpdate(req.params.id, { $set: marks }, { new: true });
         res.json({ success: true, marks: savedmarks })
     } catch (error) {
-    console.error(error.message);
-    res.status(500).send("Internal Server Error");
-}
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
 })
 module.exports = router;

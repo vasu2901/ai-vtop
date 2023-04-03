@@ -32,8 +32,8 @@ const UECredits = () => {
     return (
         <div>
             <Sidebar />
-            <div className='table mx-auto my-auto'>
-                <table style={{ cellspacing: "0" }}>
+            <div className='table'>
+                <table className='mx-auto' style={{ cellspacing: "0" }}>
                     <thead>
                         <tr>
                             <th>

@@ -79,7 +79,7 @@ const Fachome = () => {
         <nav className="navbar navbar-expand-fluid" style={{ height: "60px", backgroundColor: "#236fa1e2", zindex: "1" }}>
           <Link className="navbar-brand mx-3" to="/homewebsite"
             style={{ fontSize: "30px", fontFamily: "TimesNewRoman, Times, serif", color: "white" }}><strong>AI-VTOP</strong></Link>
-          <button className='btn btn-outline-danger' onClick={onClick} style={{ marginRight: "2%" }}>Log Out  <i className='fa fa-power-off'></i></button>
+          <button className='btn btn-success' onClick={onClick} style={{ marginRight: "2%" }}>Log Out  <i className='fa fa-power-off'></i></button>
         </nav >
       </div >
         <div style={{ color: 'red', backgroundColor: 'white', marginLeft: '400px', marginRight: "400px", marginTop: " 15px", borderTop: "5px solid red", borderRadius: " 10px", fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif", paddingBottom: "5px", paddingLeft: " 5px", fontWeight: "bold" }}>

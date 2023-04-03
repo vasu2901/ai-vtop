@@ -1,29 +1,50 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import Navbar from './Navbar'
+import Navbar from './Navbar';
+import emailjs from '@emailjs/browser';
 
 const Studsignup = () => {
   const [details, setdetails] = useState({name: "",reg_no: "", mail: "", Password: "",});
   let history = useNavigate();
   const check = async(e) => {
     e.preventDefault();
-        const response = await fetch("http://localhost:5000/api/stud/createstud", {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({name: details.name, reg_no: details.reg_no,email: details.mail, password: details.Password})
-        });
-        
-        const json = await response.json();
-        if(json.success)
-        {
-            history("/studentlogin");
-            alert("Please Login");
-        }
-        else{
-          alert(json.message);
-        }
+    console.log(details);
+    if (details.mail.includes("vitbhopal.ac.in")) {
+
+      const response = await fetch("http://localhost:5000/api/stud/createstud", {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify({ name: details.name, reg_no: details.reg_no, email: details.mail, password: details.Password })
+      });
+      const json = await response.json();
+      if (json.success) {
+        localStorage.setItem('token', json.authtoken);
+        emailjs.init("aQMSiHzt-uEep8YCA"); //please encrypted user id for malicious attacks
+        //set the parameter as per you template parameter[https://dashboard.emailjs.com/templates]
+        var templateParams = {
+          email_id: details.mail,
+          from_name: "vighnesh vasu vats",
+          message: json.otp
+        };
+
+        emailjs.send('service_wact4ql', 'template_lnwuznk', templateParams)
+          .then(function (response) {
+            alert('SUCCESS!', response.status, response.text);
+            history('/verify');
+          }, function (error) {
+            console.log('FAILED...', error);
+          });
+      }
+      else {
+        alert(json.message);
+      }
+    }
+    else{
+      alert("Sorry you are not allowed to access this page");
+      history('/home');
+    }
   }
   const onChange =(e)=>{
     setdetails({...details,[ e.target.name] : e.target.value});

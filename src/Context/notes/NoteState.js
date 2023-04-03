@@ -84,8 +84,21 @@ const NoteState = (props) => {
             alert("Failed to Update marks");
         }
     }
+    const failstudent = async()=>{
+        const response = await fetch(`${host}/api/record/failstud`, {
+            method: 'GET',
+            headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') },
+        });
+        const json = await response.json();
+        if (json.success) {
+            setteachnote(json.marks);
+        }
+        else {
+            alert("Failed to Update marks");
+        }
+    }
     return (
-        <noteContext.Provider value={{ notes: notes, setnotes: setnotes, addNotes: addNotes, fetchNotes: fetchNotes, teachnote: teachnote, setteachnote: setteachnote, facnotes: facnotes, adminnotes0: adminnotes0, deletenote: deletenote, tl: tl, updateNotes: updateNotes }}>
+        <noteContext.Provider value={{ notes: notes, setnotes: setnotes, addNotes: addNotes, fetchNotes: fetchNotes, teachnote: teachnote, setteachnote: setteachnote, facnotes: facnotes, adminnotes0: adminnotes0, deletenote: deletenote, tl: tl, updateNotes: updateNotes, failstudent: failstudent }}>
             {props.children}
         </noteContext.Provider >
     )

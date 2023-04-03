@@ -15,7 +15,7 @@ const fetchUser = (req, res, next) => {
         next();
     }
     catch (err) {
-        return res.status(401).send({ error: "Please authenticate usig a walid token" });
+        return res.status(401).send({ error: "Please authenticate usig a valid token" });
     }
 }
 module.exports = fetchUser;

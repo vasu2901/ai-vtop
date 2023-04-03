@@ -28,6 +28,8 @@ import { Updatemarks } from './template/Updatemarks';
 import PECredits from './template/PECredits';
 import UCCredits from './template/UCCredits';
 import UECredits from './template/UECredits';
+import Verify from './template/Verify';
+import Facrecord from './template/Facrecord';
 function App() {
   return (
     <div>
@@ -50,12 +52,14 @@ function App() {
             <Route path='/showMarks' element={<ShowMarks />} />
             <Route path='/pccredits' element={<PCcredits />} />
             <Route path='/fachome' element={<Fachome />} />
-            <Route path='/adminhome' element={<Adminhome />}/>
+            <Route path='/adminhome' element={<Adminhome />} />
             <Route path='/studrecord' element={<Studrecords />} />
-            <Route path ='/updatemarks' element={<Updatemarks />} />
-            <Route path ='/pecredits' element={<PECredits />} />
-            <Route path ='/uccredits' element={<UCCredits />} />
-            <Route path ='/uecredits' element={<UECredits />} />
+            <Route path='/updatemarks' element={<Updatemarks />} />
+            <Route path='/pecredits' element={<PECredits />} />
+            <Route path='/uccredits' element={<UCCredits />} />
+            <Route path='/uecredits' element={<UECredits />} />
+            <Route path='/verify' element={<Verify />} />
+            <Route path='/facrecord' element={<Facrecord />} />
           </Routes>
         </Router>
       </NoteState>

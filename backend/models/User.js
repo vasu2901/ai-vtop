@@ -18,6 +18,18 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+  otp: {
+    type: Number,
+    required: true
+  },
+  verified: {
+    type: String,
+    default: false
+  },
+  forgot:{
+    type: String,
+    default: "false"
+  }
 });
 
 const User = mongoose.model('user', userSchema);
