@@ -8,7 +8,7 @@ var cors = require('cors')
 var app = express()
 
 app.use(cors())
-const port = process.env.port;
+const port = 5000;
 
 app.use(express.json())
 app.get('/', (req, res) => {
