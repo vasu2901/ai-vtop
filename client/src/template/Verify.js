@@ -8,7 +8,7 @@ const Verify = () => {
   const verify = async (e) => {
     e.preventDefault()
     if (note.email.includes('vitbhopal.ac.in')) {
-      const response = await fetch("http://localhost:5000/api/stud/verify", {
+      const response = await fetch("https://aivtop.onrender.com/api/stud/verify", {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',

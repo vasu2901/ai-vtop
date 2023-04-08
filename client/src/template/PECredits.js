@@ -3,7 +3,7 @@
 const PECredits = () => {
     const [remain, setremain] = useState(15)
     const table = async() => {
-        const response = await fetch(`http://localhost:5000/api/marks/getmarks`, {
+        const response = await fetch(`https://aivtop.onrender.com/api/marks/getmarks`, {
             method: 'GET',
             headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') }
         });

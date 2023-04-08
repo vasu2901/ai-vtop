@@ -8,7 +8,7 @@ const Newpassword = () => {
         e.preventDefault();
         if (details.email.includes("vitbhopal.ac.in")) {
 
-            const response = await fetch("http://localhost:5000/api/stud/newpassword", {
+            const response = await fetch("https://aivtop.onrender.com/api/stud/newpassword", {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'

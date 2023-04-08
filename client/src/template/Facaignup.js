@@ -11,7 +11,7 @@ const Facaignup = () => {
     console.log(details);
     if (details.mail.includes("vitbhopal.ac.in")) {
 
-      const response = await fetch("http://localhost:5000/api/stud/createstud", {
+      const response = await fetch("https://aivtop.onrender.com/api/stud/createstud", {
         method: 'POST',
         headers: {
           'Content-type': 'application/json'
