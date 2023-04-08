@@ -1,6 +1,6 @@
 const express = require('express');
-const fetchUser = require('../middleware/fetchUser');
-const Marks = require('../Models/Marks');
+const fetchUser = require('../MiddleWare/fetchUser');
+const Marks = require('../models/Marks');
 const User = require('../models/User');
 const router = express.Router();
 router.post('/', fetchUser, async (req, res) => {

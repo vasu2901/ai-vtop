@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const fetchUser = require("../MiddleWare/fetchUser");
-const Marks = require("../Models/Marks");
+const Marks = require("../models/Marks");
 
 const { body, validationResult } = require('express-validator');
 // fetching all marks of the students.
