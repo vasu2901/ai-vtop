@@ -6,7 +6,7 @@ const Logstud = () => {
     let history = useNavigate();
     const user = async (e) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:5000/api/stud/loginstud", {
+        const response = await fetch("https://aivtop.onrender.com/api/stud/loginstud", {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
