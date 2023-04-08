@@ -9,7 +9,7 @@ const Forgotpswrd = () => {
   }
   const onsubmit = async(e) => {
     e.preventDefault()
-    const response = await fetch("http://localhost:5000/api/stud/forgotpassword", {
+    const response = await fetch("https://aivtop.onrender.com/api/stud/forgotpassword", {
         method: 'POST',
         headers: {
           'Content-type': 'application/json'
