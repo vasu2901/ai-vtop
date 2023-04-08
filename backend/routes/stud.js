@@ -5,7 +5,8 @@ const User = require('../models/User');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = 'harryisagoodboy';
+require('dotenv').config();
+const JWT_SECRET = process.env.JWT_SECRET;
 //Signup.
 router.post('/createstud', [
     body('email').isEmail(),
