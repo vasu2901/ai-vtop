@@ -8,6 +8,7 @@ const UCCredits = () => {
             headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') }
         });
         const json = await response.json();
+        console.log(json);
         const myTable = document.getElementById('myTable');
         const tr = myTable.getElementsByTagName('tr');
         let remaining = 69;
@@ -23,6 +24,7 @@ const UCCredits = () => {
                 }
             }
         });
+        console.log(remaining)
         setremain(remaining);
     }
     useEffect(() => {

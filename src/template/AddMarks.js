@@ -17,10 +17,10 @@ const AddMarks = () => {
   return (
     <div>
       <Sidebar />
-      <div style={{ marginTop: "1%", marginLeft: "5%", backgroundColor: "white", borderTop: "5px solid blue", marginRight: "2%", paddingBottom: "1%" }} >
+      <div style={{ marginTop: "1%", marginLeft: "5%", backgroundColor: "white", borderTop: "5px solid blue", marginRight: "2%", paddingBottom: "1%", marginBottom: "5%" }} >
         <h3 className="text-center">Add Your Marks</h3>
         <hr />
-        <div className='container mx-2'>
+        <div className='container mx-2' id="addmarks">
           <select className="form-select" name='coursename' aria-label="Default select example" style={{ backgroundColor: "#007FFF", color: "white" }} onChange={onchange}>
             <option defaultValue>Course Name</option>
             <option value='Data Structures and Analysis of Algorithms'>Data Structures and Analysis of Algorithms</option>
@@ -92,7 +92,7 @@ const AddMarks = () => {
             <option value='Introduction To Computational Chemistry'>Introduction To Computational Chemistry</option>
             <option value='Calculus And Laplace Transforms'>Calculus And Laplace Transforms</option>
             <option value='Applied Linear Algebra'>Applied Linear Algebra</option>
-            <option value='"Probability, Statistics and Reliability"'>"Probability, Statistics and Reliability"</option>
+            <option value='Probability, Statistics and Reliability'>Probability, Statistics and Reliability</option>
             <option value='Discrete Mathematics and Graph Theory'>Discrete Mathematics and Graph Theory</option>
             <option value='Engineering Design and Modeling'>Engineering Design and Modeling</option>
             <option value='Electric Circuits and Systems'>Electric Circuits and Systems</option>
@@ -102,7 +102,7 @@ const AddMarks = () => {
             <option value='Competitive Coding Practices'>Competitive Coding Practices</option>
             <option value='Skills For Employment'>Skills For Employment</option>
             <option value='Quantitative Skills'>Quantitative Skills</option>
-            <option value='Effective Communication'>Effective Communication</option>
+            <option value='Effective Technical Communication'>Effective Technical Communication</option>
             <option value='Advanced Technical Communication Skills'>Advanced Technical Communication Skills</option>
             <option value='Environmental Sustainability'>Environmental Sustainability</option>
             <option value='Project Exhibition - I'>Project Exhibition - I</option>

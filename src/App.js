@@ -30,6 +30,8 @@ import UCCredits from './template/UCCredits';
 import UECredits from './template/UECredits';
 import Verify from './template/Verify';
 import Facrecord from './template/Facrecord';
+import Forgotpswrd from './template/Forgotpswrd';
+import Newpassword from './template/Newpassword';
 function App() {
   return (
     <div>
@@ -38,7 +40,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Main />}></Route>
             <Route path="/studentlogin" element={<Logstud />}></Route>
-            <Route path="/facultylogin" element={<Logfac></Logfac>}></Route>
+            <Route path="/facultylogin" element={<Logfac />}></Route>
             <Route path="/adminlogin" element={<Logadmin />}></Route>
             <Route path="/Studentsignup" element={<Studsignup />}></Route>
             <Route path="/Facultysignup" element={<Facaignup />}></Route>
@@ -60,6 +62,8 @@ function App() {
             <Route path='/uecredits' element={<UECredits />} />
             <Route path='/verify' element={<Verify />} />
             <Route path='/facrecord' element={<Facrecord />} />
+            <Route path='/forgotpassword' element={<Forgotpswrd />} />
+            <Route path='/newpassword' element={<Newpassword />} />
           </Routes>
         </Router>
       </NoteState>

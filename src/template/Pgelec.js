@@ -5,7 +5,7 @@ const Pgelec = () => {
   return (
     <div>
       <Sidebar />
-      <div className="container my-3" style={{ marginTop: "75px", background: "white" }}>
+      <div className="container my-3" style={{ marginTop: "75px", background: "white", borderRadius: "10px" }}>
         <table className='mx-auto' style={{ border: "1", cellspacing: "0" }}>
           <thead>
             <tr>

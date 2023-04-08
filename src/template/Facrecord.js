@@ -23,7 +23,7 @@ const Facrecord = () => {
     }
     useEffect(() => {
         failstudent();
-    }, [])
+    }, [failstudent])
     return (
         <div>
             <Navbar3 />

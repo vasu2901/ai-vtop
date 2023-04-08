@@ -36,7 +36,7 @@ const marksSchema = new Schema({
     required: true
   },
   credit : {
-    type: String,
+    type: Number,
     required: true
   },
   facultyname: {

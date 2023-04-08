@@ -1,6 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcryptjs')
-const fetchUser = require("../middleware/fetchUser");
+const fetchUser = require("../MiddleWare/fetchUser");
 const User = require('../models/User');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
@@ -114,6 +114,18 @@ router.post('/newpassword', async (req, res) => {
                 forgot: "false"
             });
             res.status(200).send({success: true, "message": "Password Changed Successfully" })
+        }
+        else
+        {
+            const updateduser = await User.updateOne({ _id: user._id }, {
+                name: user.name,
+                email: user.email,
+                password: user.password,
+                otp: 0,
+                verified: "True",
+                forgot: "false"
+            });
+            res.status(200).send({success: false, "message": "Sorry wrong credentials" })
         }
     }
     catch (error) {

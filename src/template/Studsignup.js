@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import Navbar from './Navbar';
+import React, { useEffect, useState } from 'react'
+import { useNavigate, Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
-
+import image from '../loginpht2.png'
+import "../App.css"
 const Studsignup = () => {
-  const [details, setdetails] = useState({name: "",reg_no: "", mail: "", Password: "",});
+  const [details, setdetails] = useState({ name: "", reg_no: "", mail: "", Password: "", });
   let history = useNavigate();
-  const check = async(e) => {
+  const check = async (e) => {
     e.preventDefault();
     console.log(details);
     if (details.mail.includes("vitbhopal.ac.in")) {
@@ -39,33 +39,47 @@ const Studsignup = () => {
       }
       else {
         alert(json.message);
+        History('/')
       }
     }
-    else{
+    else {
       alert("Sorry you are not allowed to access this page");
       history('/home');
     }
   }
-  const onChange =(e)=>{
-    setdetails({...details,[ e.target.name] : e.target.value});
+  const onChange = (e) => {
+    setdetails({ ...details, [e.target.name]: e.target.value });
   }
+  useEffect(() => {
+    document.body.style.backgroundImage = "url('https://img.freepik.com/free-photo/blue-brushed-painted-abstract-background_23-2148153193.jpg')"
+    document.body.style.backgroundSize = "cover";
+
+  }, [])
   return (
     <div>
-      <Navbar />
-      <div style={{ color: "blue", backgroundColor: "white", opacity: "0.81245", marginLeft: "375px", marginRight: "375px", marginBottom: "50px", marginTop: "17px", borderTop: "5px solid blue", borderRadius: "10px", fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',' Geneva', 'Verdana', 'sans-serif'", paddingBottom: "5px", paddingLeft: "5px", fontWeight: "bold" }}>
-        <p className='text-center'> SignUp for Students</p>
-        <hr />
-        <form className='container'>
-          <label htmlFor="name">Name : </label><input type="text" id="name" name="name"value={details.name} style={{ marginLeft: "84px" }} onChange={onChange}/>
-          <hr />
-          <label htmlFor="reg_no">Registration No : </label><input type="text" id="reg_no" value={details.reg_no} name="reg_no" onChange={onChange} style={{ marginLeft: "10px" }} />
-          <hr />
-          <label htmlFor="mail">Mail Id : </label><input type="text" id="mail" name="mail" value={details.mail} onChange={onChange} style={{ marginLeft: "78px" }} />
-          <hr />
-          <label htmlFor="Password">Password : </label><input type="password" id="Password" name="Password" value={details.Password} onChange={onChange}  style={{ marginLeft: "57px" }} />
-          <hr />
-          <button type="button" id="Login" className="btn btn-outline-primary" style={{ marginLeft: "250px" }} onClick={check}>Submit</button>
-        </form>
+      <Link to='/' style={{ textAlign: "right", color: "white", fontSize: "200%", marginLeft: "85%", marginRight: '0%', marginBottom: '3%', textDecoration: "none" }}>AI-VTOP</Link>
+      <div className="container mx-auto" id='signuppage1'>
+        <div className='row'>
+          <div className='col'>
+            <img id="signuppht1" className='mx-auto' src={image} alt="Girl in a jacket" />
+          </div>
+          <div className='col' id='lgdv1'><p className='text-center' style={{ color: "white", fontSize: "25px" }}>Sign Up for Students</p>
+            <div>
+              <br />
+              <form className='loginform1'>
+                <label htmlFor="Name" style={{ color: "white" }}>Name : </label><input type="text" id="name" value={details.name} name="name" onChange={onChange} />
+                <hr />
+                <label htmlFor="reg_no" style={{ color: "white" }}>Registration No. : </label><input type="text" id="reg_no" value={details.reg_no} name="reg_no" onChange={onChange} />
+                <hr />
+                <label htmlFor="mail" style={{ color: "white" }}>Email Id : </label><input type="text" id="mail" name="mail" value={details.mail} onChange={onChange} />
+                <hr />
+                <label htmlFor="Password" style={{ color: "white" }}>Password : </label><input type="password" id="Password" value={details.Password} name="Password" onChange={onChange} />
+                <hr />
+                <button type="button" id="Login" className="btn btn-outline-primary" style={{ marginLeft: "35%" }} onClick={check}>Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

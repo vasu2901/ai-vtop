@@ -1,6 +1,9 @@
-import React  from 'react'
+import React,{useEffect}  from 'react'
 import Sidebar from './Sidebar'
 const Homepage = () => {
+  useEffect(()=>{
+    document.body.style.backgroundImage = 'none';
+  },[])
   return (
     <div>
       <Sidebar />
