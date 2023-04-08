@@ -19,7 +19,7 @@ const Fachome = () => {
     else {
       history('/facultylogin')
     }
-  }, [])
+  }, [facnotes, history])
   const [search, setsearch] = useState({ courseid: "", slot: "" })
   const handleClick = (e) => {
     e.preventDefault();

@@ -17,7 +17,7 @@ const Studrecords = () => {
 
     useEffect(() => {
         adminnotes0();
-    }, [])
+    }, [adminnotes0])
     const [total, settotal] = useState(tl)
     const handleClick = (e) => {
         e.preventDefault();

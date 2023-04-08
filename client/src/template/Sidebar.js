@@ -8,7 +8,7 @@ const Sidebar = () => {
         {
             history("/studentlogin");
         }
-    }, [])
+    }, [history])
     
     return (
         <><div>
