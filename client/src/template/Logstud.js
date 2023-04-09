@@ -33,7 +33,7 @@ const Logstud = () => {
     return (
         <div>
             <Link to='/' style={{ textAlign: "right", color: "white", fontSize: "200%", marginLeft: "85%", marginRight: '0%', marginBottom: '3%', textDecoration: "none" }}>AI-VTOP</Link>
-            <div className="container mx-auto" id='loginpage1'>
+            <div className="container mx-auto" id='loginpage1' style={{borderTop: "5px solid  blue"}}>
                 <div className='row'>
                     <div className='col'>
                         <img id="loginpht1" className='mx-auto' src={image} alt="Girl in a jacket" />
