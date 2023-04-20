@@ -1,16 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useState, useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import noteContext from '../Context/notes/noteContext'
-const Fachome = () => {
+const Failstudents = () => {
   const context = useContext(noteContext);
   let history = useNavigate();
-  const onClick = (e) => {
-    e.preventDefault();
-    if (localStorage.getItem('token')) {
-      localStorage.removeItem('token');
-      history("/facultylogin");
-    }
-  }
+  
   const { teachnote, facnotes } = context;
   useEffect(() => {
     if (localStorage.getItem('token')) {
@@ -50,8 +44,6 @@ const Fachome = () => {
       for (let ind = 0; ind < tr.length; ind++) {
         tr[ind].style.display = "";
       }
-
-
     }
   }
   const renderCars = (teachnote, index = 0) => {
@@ -68,33 +60,12 @@ const Fachome = () => {
       </tr>
     )
   }
-
   const onchange = (e) => {
     console.log({ [e.target.name]: e.target.value })
     setsearch({ ...search, [e.target.name]: e.target.value })
   }
   return (
     <div>
-      <div className='containerfluid'>
-        <nav className="navbar navbar-expand-fluid" style={{ height: "60px", backgroundColor: "#236fa1e2", zindex: "1" }}>
-          <Link className="navbar-brand mx-3" to="/homewebsite"
-            style={{ fontSize: "30px", fontFamily: "TimesNewRoman, Times, serif", color: "white" }}><strong>AI VTOP</strong></Link>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/failstudents0" style={{ fontSize: "20px", fontFamily: "TimesNewRoman, Times, serif", color: "white" }}>Failed</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/reregisterstudents" style={{ fontSize: "20px", fontFamily: "TimesNewRoman, Times, serif", color: "white" }}>Debarred</Link>
-              </li>
-            </ul>
-          </div>
-          <button className='btn btn-success' onClick={onClick} style={{ marginRight: "2%" }}>Log Out  <i className='fa fa-power-off'></i></button>
-        </nav >
-      </div >
       <div style={{ color: 'red', backgroundColor: 'white', marginLeft: '400px', marginRight: "400px", marginTop: " 15px", borderTop: "5px solid red", borderRadius: " 10px", fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif", paddingBottom: "5px", paddingLeft: " 5px", fontWeight: "bold" }}>
         <p className='text-center'>Search for Record</p>
         <hr />
@@ -131,4 +102,4 @@ const Fachome = () => {
   )
 }
 
-export default Fachome
+export default Failstudents

@@ -34,7 +34,7 @@ const Forgotpswrd = () => {
             console.log('FAILED...', error);
           });
       }
-      else{
+      if(!json.success){
         if(email.email.includes('2021@vitbhopal.ac.in')){
           history('/Studentsignup');
         }
@@ -48,7 +48,7 @@ const Forgotpswrd = () => {
 
       <div className="container mx-auto" style={{marginTop: "15%", maxWidth: "30%"}}>
         <form>
-          <label for="exampleInputEmail1" className="form-label" style={{fontFamily: '"Georgina", "Times New Roman', color:'black', fontSize:"35px"}}>Email address</label>
+          <label htmlFor="exampleInputEmail1" className="form-label" style={{fontFamily: '"Georgina", "Times New Roman', color:'black', fontSize:"35px"}}>Email address</label>
           <input type="email" className="form-control" id="exampleInputEmail1" name='email' value={email.email} aria-describedby="emailHelp" onChange={onchange} />
           <button type="submit" className="btn btn-outline-primary my-5" onClick={onsubmit}>Submit</button>
         </form>

@@ -3,7 +3,7 @@ const fetchUser = require("../MiddleWare/fetchUser");
 const Marks = require('../models/Marks');
 const User = require('../models/User');
 const router = express.Router();
-//const { body, validationResult } = require('express-validator');
+
 router.get('/', fetchUser, async (req, res) => {
     try {
         try {
@@ -55,7 +55,6 @@ router.get('/failstud', fetchUser, async (req, res) => {
         res.status(500).send(err); // this is for sending the error.
     }
 })
-
 router.delete('/deletemarks/:id', fetchUser, async (req, res) => {
     try {
         // Find the marks to be delete and delete it
@@ -76,7 +75,7 @@ router.post('/updatemarks/:id', fetchUser, async (req, res) => {
         let savedmarks = await Marks.findById(req.params.id);
         if (!savedmarks) { return res.status(404).send("Not Found") }
         const marks = {};
-        const { coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid } = req.body;
+        const { coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid, reg_date, termend_date, re_reg} = req.body;
 
         if (coursename) { marks.coursename = coursename }
         if (courseid) { marks.courseid = courseid }
@@ -86,9 +85,13 @@ router.post('/updatemarks/:id', fetchUser, async (req, res) => {
         if (credit) { marks.credit = credit }
         if (facultyname) { marks.facultyname = facultyname }
         if (facultyid) { marks.facultyid = facultyid }
+        if (reg_date) { marks.reg_date = reg_date }
+        if (termend_date) { marks.termend_date = termend_date }
+        if (re_reg) { marks.re_reg = re_reg }
         savedmarks = await Marks.findByIdAndUpdate(req.params.id, { $set: marks }, { new: true });
         res.json({ success: true, marks: savedmarks })
-    } catch (error) {
+    } 
+    catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error");
     }

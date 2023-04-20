@@ -2,21 +2,24 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import image from "../loginpht1.png"
 const Logfac = () => {
-    const [login, setlogin] = useState({ Username: "", Password: "" });
+    const [login, setlogin] = useState({ Username: "", password: "" });
     let history = useNavigate();
     const user = async (e) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:5000/api/stud/loginstud", {
+        const response = await fetch("https://aivtop.onrender.com/api/stud/loginstud", {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify({ reg_no: login.Username, password: login.Password })
+            body: JSON.stringify({ reg_no: login.Username, password: login.password })
         });
         const json = await response.json();
         if (json.success) {
             localStorage.setItem('token', json.authtoken);
             history("/fachome");
+        }
+        else{
+            console.log(login.Username, login.password)
         }
     }
     const onChange = (e) => {
@@ -38,9 +41,9 @@ const Logfac = () => {
                         <div>
                             <br />
                             <form className='loginform1'>
-                                <label htmlFor="Username" style={{ color: "white" }}>Username : </label><input type="text" id="reg_no" value={login.reg_no} name="reg_no" onChange={onChange} />
+                                <label htmlFor="Username" style={{ color: "white" }}>Username : </label><input type="text" id="Username" value={login.Username} name="Username" onChange={onChange} />
                                 <hr />
-                                <label htmlFor="Password" style={{ color: "white" }}>Password : </label><input type="password" id="password" value={login.password} name="password" onChange={onChange} />
+                                <label htmlFor="password" style={{ color: "white" }}>Password : </label><input type="password" id="password" value={login.password} name="password" onChange={onChange} />
                                 <hr />
                                 <p style={{ color: "white" }}>Not Registered?<Link to="/FacultySignup" style={{ paddingLeft: "2px", textDecoration: "none", fontSize: "16px", marginLeft: "5%" }}>SignUp</Link></p>
                                 <p style={{ color: "white" }}><Link to="/forgotpassword" style={{ paddingLeft: "2px", textDecoration: "none", fontSize: "16px" }}>Forgot Password</Link></p>

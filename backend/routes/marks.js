@@ -26,17 +26,19 @@ router.post('/postmarks', fetchUser, [
     body('credit').exists(),
     body('facultyname').exists(),
     body('facultyid').exists(),
+    body('reg_date').exists(),
+    body('termend_date').exists(),
 ], async (req, res) => {
     try {
         const errors = validationResult(req)
         if (!errors.isEmpty()) {
             return res.status(400).json({ error: errors.array() });
         }
-        const { coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid } = req.body;
+        const { coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid, reg_date, termend_date } = req.body;
         const userID = req.user.id;
         const user0 = await User.findById(userID).select("-password");
         const marks = new Marks({
-            stud: req.user.id, name: user0.name, reg_no: user0.reg_no, coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid
+            stud: req.user.id, name: user0.name, reg_no: user0.reg_no, coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid,reg_date, termend_date
         })
         const savedMarks = await marks.save();
         res.json({ success: "true", savedMarks: savedMarks });
@@ -50,7 +52,7 @@ router.post('/updatemarks/:id',  async (req, res) => {
     try {
         const marks = {};
         let success = false;
-        const { coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid } = req.body;
+        const { coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid, reg_date, termend_date } = req.body;
 
         if (coursename) { marks.coursename = coursename }
         if (courseid) { marks.courseid = courseid }
@@ -60,6 +62,9 @@ router.post('/updatemarks/:id',  async (req, res) => {
         if (credit) { marks.credit = credit }
         if (facultyname) { marks.facultyname = facultyname }
         if (facultyid) { marks.facultyid = facultyid }
+        
+        if (reg_date) { marks.reg_date = reg_date }
+        if (termend_date) { marks.termend_date = termend_date }
 
         let savedMarks = await Marks.findById(req.params.id);
         if (!savedMarks) { return res.status(404).send({success, message: "Not Found" }); }

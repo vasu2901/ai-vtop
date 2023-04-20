@@ -289,7 +289,10 @@ const AddMarks = () => {
             <option value="D">D</option>
             <option value="E">E</option>
             <option value="F">F</option>
-            <option value="N">N</option>
+            <option value="N1">N1</option>
+            <option value="N2">N2</option>
+            <option value="N3">N3</option>
+            <option value="N4">N4</option>
             <option value="P">P</option>
           </select>
           <hr />

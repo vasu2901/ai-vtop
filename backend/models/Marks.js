@@ -46,6 +46,18 @@ const marksSchema = new Schema({
   facultyid: {
     type: String,
     required: true
+  },
+  reg_date: {
+    type: Date,
+    required: true
+  },
+  termend_date: {
+    type: Date,
+    required: true
+  },
+  re_reg: {
+    type: Boolean,
+    default: false
   }
 });
 module.exports = mongoose.model('student',marksSchema);

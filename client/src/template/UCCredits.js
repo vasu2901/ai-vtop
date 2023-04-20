@@ -17,7 +17,7 @@ const UCCredits = () => {
                 const td0 = tr[index].getElementsByTagName('td')[1];
                 if (td0) {
                     let txt1 = td0.textContent || td0.innerHTML;
-                    if (txt1 === note.coursename && note.grades !== 'F' && note.coursetype === 'UC') {
+                    if (txt1 === note.coursename &&  note.grades !== 'F' && note.grades !== 'N' && note.coursetype === 'UC') {
                         tr[index].style.display = "none";
                         remaining = remaining - note.credit;
                     }

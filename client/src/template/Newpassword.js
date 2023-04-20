@@ -51,7 +51,7 @@ const Newpassword = () => {
                     <div className='col'>
                     <img id="loginpht1" className='mx-auto' src={image} alt="Girl in a jacket" />
                     </div>
-                    <div className='col' id='lgdv1'><p className='text-center' style={{ color: "black", fontSize: "25px" }}>Sign Up for Students</p>
+                    <div className='col' id='lgdv1'><p className='text-center' style={{ color: "black", fontSize: "25px" }}>Forgot Password</p>
                         <div>
                             <br />
                             <form className='loginform1'>

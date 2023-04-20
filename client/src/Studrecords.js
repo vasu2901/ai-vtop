@@ -139,7 +139,7 @@ const Studrecords = () => {
                 <hr />
                 <button type="button" id="Login" className="btn btn-outline-danger" style={{ marginLeft: "50px" }} onClick={handleClick}>Submit</button>
             </div>
-            <div className='container my-3 mx-auto'>
+            <div className='container my-3 mx-auto' style={{backgroundColor: "white"}}>
                 <table id='myTable' className='mx-auto'>
                     <thead>
                         <tr>

@@ -6,20 +6,22 @@ const Facrecord = () => {
     const context = useContext(noteContext);
     const { teachnote, failstudent } = context;
     const renderstud = (teachnote, index = 0) => {
-        return (
-            <tr key={index} className={teachnote.courseid + teachnote.slot}>
-                <th>{index + 1}</th>
-                <th className={teachnote.name}>{teachnote.name}</th>
-                <th className={teachnote.reg_no}>{teachnote.reg_no}</th>
-                <th>{teachnote.courseid}</th>
-                <th className={teachnote.coursename}>{teachnote.coursename}</th>
-                <th className={teachnote.facultyid}>{teachnote.facultyid}</th>
-                <th className={teachnote.facultyname}>{teachnote.facultyname}</th>
-                <th className={teachnote.slot}>{teachnote.slot}</th>
-                <th className={teachnote.grades}>{teachnote.grades}</th>
-                <th className={teachnote.credit}>{teachnote.credit}</th>
-            </tr>
-        )
+        if (teachnote.length > 0) {
+            return (
+                <tr key={index} className={teachnote.courseid + teachnote.slot}>
+                    <th>{index + 1}</th>
+                    <th className={teachnote.name}>{teachnote.name}</th>
+                    <th className={teachnote.reg_no}>{teachnote.reg_no}</th>
+                    <th>{teachnote.courseid}</th>
+                    <th className={teachnote.coursename}>{teachnote.coursename}</th>
+                    <th className={teachnote.facultyid}>{teachnote.facultyid}</th>
+                    <th className={teachnote.facultyname}>{teachnote.facultyname}</th>
+                    <th className={teachnote.slot}>{teachnote.slot}</th>
+                    <th className={teachnote.grades}>{teachnote.grades}</th>
+                    <th className={teachnote.credit}>{teachnote.credit}</th>
+                </tr>
+            )
+        }
     }
     useEffect(() => {
         failstudent();
@@ -27,7 +29,7 @@ const Facrecord = () => {
     return (
         <div>
             <Navbar3 />
-            <div className='container my-3'>
+            <div className='container my-3' style={{backgroundColor: "white"}}>
                 <table id='myTable' >
                     <thead>
                         <tr>
