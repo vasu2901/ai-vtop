@@ -4,11 +4,11 @@ import notecontext from '../Context/notes/noteContext'
 const AddMarks = () => {
   const context = useContext(notecontext);
   const { addNotes } = context;
-  const [note, setnote] = useState({ coursename: "", courseid: "", coursetype: "",slot: "", grades: "", credit: "", facultyname: "", facultyid: "" })
+  const [note, setnote] = useState({ coursename: "", courseid: "", coursetype: "",slot: "", grades: "", credit: "", facultyname: "", facultyid: "", reg_date: "",  termend_date: ""})
   const handleClick = (e) => {
     e.preventDefault();
     console.log(note);
-    addNotes(note.coursename, note.courseid, note.coursetype,note.slot, note.grades, note.credit, note.facultyname, note.facultyid);
+    addNotes(note.coursename, note.courseid, note.coursetype,note.slot, note.grades, note.credit, note.facultyname, note.facultyid, note.reg_date, note.termend_date);
   }
   const onchange = (e) => {
     console.log({ [e.target.name]: e.target.value })
@@ -309,6 +309,12 @@ const AddMarks = () => {
 
           <hr />
           <label htmlFor="facultyid">FacultyId : </label><input type="text" id="facultyid" name="facultyid" value={note.facultyid} style={{ marginLeft: "10px" }} onChange={onchange}/>
+
+          <hr />
+          <label htmlFor="reg_date">Date of Registration : </label><input type="date" id="reg_date" name="reg_date" value={note.reg_date} style={{ marginLeft: "10px", background: 'blue' }} onChange={onchange}/>
+
+          <hr />
+          <label htmlFor="termend_date">Term End Date : </label><input type="date" id="termend_date" name="termend_date" value={note.termend_date} style={{ marginLeft: "10px", background:"blue" }} onChange={onchange}/>
 
           <hr />
           <button type="submit" className="btn btn-outline-primary" onClick={handleClick} onChange={onchange}>Submit</button>

@@ -18,12 +18,12 @@ const NoteState = (props) => {
         return json;
     };
 
-    const addNotes = async (coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid) => {
+    const addNotes = async (coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid, reg_date, termend_date) => {
         /*API CALL;*/
         const response = await fetch(`${host}/api/marks/postmarks`, {
             method: 'POST',
             headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') },
-            body: JSON.stringify({ coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid })
+            body: JSON.stringify({ coursename, courseid, coursetype, slot, grades, credit, facultyname, facultyid, reg_date, termend_date })
         });
         const json = await response.json();
         if (json.success) {
@@ -85,7 +85,7 @@ const NoteState = (props) => {
         }
     }
     const failstudent = async()=>{
-        const response = await fetch(`${host}/api/record/failstud`, {
+        const response = await fetch(`${host}/api/teacher/failstud`, {
             method: 'GET',
             headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') },
         });
@@ -94,11 +94,39 @@ const NoteState = (props) => {
             setteachnote(json.marks);
         }
         else {
-            alert("Failed to Update marks");
+            alert("Failed to Fetch marks");
+        }
+    }
+    const debarred = async() =>{
+        const response = await fetch(`${host}/api/teacher/debarred`, {
+            method: 'GET',
+            headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') },
+        });
+        const json = await response.json();
+        if (json.success) {
+            setteachnote(json.marks);
+        }
+        else {
+            alert("Failed to Fetch marks");
+        }
+    }
+    const allrecords = async() =>{
+        const response = await fetch(`${host}/api/teacher/allrecords`, {
+            method: 'GET',
+            headers: { 'content-type': 'Application/JSON', 'auth-token': localStorage.getItem('token') },
+        });
+        const json = await response.json();
+        if (json.success) {
+            setteachnote(json.marks);
+        }
+        else {
+            alert("Failed to Fetch marks");
         }
     }
     return (
-        <noteContext.Provider value={{ notes: notes, setnotes: setnotes, addNotes: addNotes, fetchNotes: fetchNotes, teachnote: teachnote, setteachnote: setteachnote, facnotes: facnotes, adminnotes0: adminnotes0, deletenote: deletenote, tl: tl, updateNotes: updateNotes, failstudent: failstudent }}>
+        <noteContext.Provider value={{ notes: notes, setnotes: setnotes, addNotes: addNotes, fetchNotes: fetchNotes, teachnote: teachnote, setteachnote: setteachnote, facnotes: facnotes, adminnotes0: adminnotes0, deletenote: deletenote, tl: tl, updateNotes: updateNotes, failstudent: failstudent
+            , debarred: debarred, allrecords: allrecords
+        }}>
             {props.children}
         </noteContext.Provider >
     )

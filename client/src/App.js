@@ -32,6 +32,9 @@ import Verify from './template/Verify';
 import Facrecord from './template/Facrecord';
 import Forgotpswrd from './template/Forgotpswrd';
 import Newpassword from './template/Newpassword';
+import Failstudents from './template/Failstudents';
+import Debarred from './template/Debarred';
+import Allrecords from './template/Allrecords';
 function App() {
   return (
     <div>
@@ -64,6 +67,9 @@ function App() {
             <Route path='/facrecord' element={<Facrecord />} />
             <Route path='/forgotpassword' element={<Forgotpswrd />} />
             <Route path='/newpassword' element={<Newpassword />} />
+            <Route path='/failstudents0' element={<Failstudents />} />
+            <Route path='/reregisterstudents' element={<Debarred />} />
+            <Route path='/allstudents0' element={<Allrecords />} />
           </Routes>
         </Router>
       </NoteState>

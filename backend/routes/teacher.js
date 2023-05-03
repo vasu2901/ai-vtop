@@ -19,6 +19,20 @@ router.post('/', fetchUser, async (req, res) => {
         return res.status(500).send("Internal Server Error");
     }
 })
+router.get('/allrecords', fetchUser, async (res) => {
+    try {
+        const marks = await Marks.find();
+        if (marks) {
+            return res.json({success:true, marks: marks});
+        }
+
+        return res.json({success:false});
+    }
+    catch (err) {
+        console.log(err.message);
+        return res.status(500).send("Internal Server Error");
+    }
+})
 router.get('/debarred', fetchUser, async (req, res) => {
     try {
         try {

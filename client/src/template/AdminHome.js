@@ -17,6 +17,9 @@ const Adminhome = () => {
                 <th className={teachnote.slot}>{teachnote.slot}</th>
                 <th className={teachnote.grades}>{teachnote.grades}</th>
                 <th className={teachnote.credit}>{teachnote.credit}</th>
+                
+                <th className={teachnote.reg_date}>{teachnote.reg_date}</th>
+                <th className={teachnote.termend_date}>{teachnote.termend_date}</th>
             </tr>
         )
     }
@@ -27,7 +30,7 @@ const Adminhome = () => {
     return (
         <div>
             <Navbar3 />
-            <div className='container my-3'>
+            <div className='container my-3' style={{backgroundColor: "white"}}>
                 <table id='myTable' >
                     <thead>
                         <tr>
@@ -41,6 +44,9 @@ const Adminhome = () => {
                             <th style={{ width: "25%" }}>Slot</th>
                             <th style={{ width: "10%" }}>Grades</th>
                             <th style={{ width: "10%" }}>Credit</th>
+                            
+                            <th style={{ width: "10%" }}>Reg Date</th>
+                            <th style={{ width: "10%" }}>Term End Date</th>
                         </tr>
                     </thead>
                     <tbody>

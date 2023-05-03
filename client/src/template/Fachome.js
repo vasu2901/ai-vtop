@@ -55,18 +55,23 @@ const Fachome = () => {
     }
   }
   const renderCars = (teachnote, index = 0) => {
-    return (
-      <tr key={index} className={teachnote.courseid + teachnote.slot}>
-        <td>{index + 1}</td>
-        <td className={teachnote.name}>{teachnote.name}</td>
-        <td className={teachnote.reg_no}>{teachnote.reg_no}</td>
-        <td>{teachnote.courseid}</td>
-        <td className={teachnote.coursename}>{teachnote.coursename}</td>
-        <td className={teachnote.slot}>{teachnote.slot}</td>
-        <td className={teachnote.grades}>{teachnote.grades}</td>
-        <td className={teachnote.credit}>{teachnote.credit}</td>
-      </tr>
-    )
+    if(teachnote.grades !== 'F'){
+      console.log("heelo",teachnote.reg_date)
+      return (
+        <tr key={index} className={teachnote.courseid + teachnote.slot}>
+          <td>{index + 1}</td>
+          <td className={teachnote.name}>{teachnote.name}</td>
+          <td className={teachnote.reg_no}>{teachnote.reg_no}</td>
+          <td>{teachnote.courseid}</td>
+          <td className={teachnote.coursename}>{teachnote.coursename}</td>
+          <td className={teachnote.slot}>{teachnote.slot}</td>
+          <td className={teachnote.grades}>{teachnote.grades}</td>
+          <td className={teachnote.credit}>{teachnote.credit}</td>
+          <td className={teachnote.reg_date}>{teachnote.reg_date}</td>
+          <td className={teachnote.termend_date}>{teachnote.termend_date}</td>
+        </tr>
+      )
+    }
   }
 
   const onchange = (e) => {
@@ -77,13 +82,16 @@ const Fachome = () => {
     <div>
       <div className='containerfluid'>
         <nav className="navbar navbar-expand-fluid" style={{ height: "60px", backgroundColor: "#236fa1e2", zindex: "1" }}>
-          <Link className="navbar-brand mx-3" to="/homewebsite"
+          <Link className="navbar-brand mx-3" to="/fachome"
             style={{ fontSize: "30px", fontFamily: "TimesNewRoman, Times, serif", color: "white" }}><strong>AI VTOP</strong></Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+                <Link className="nav-link active" aria-current="page" to="/allstudents0" style={{ fontSize: "20px", fontFamily: "TimesNewRoman, Times, serif", color: "white" }}>All records</Link>
+              </li>
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/failstudents0" style={{ fontSize: "20px", fontFamily: "TimesNewRoman, Times, serif", color: "white" }}>Failed</Link>
               </li>
@@ -106,26 +114,30 @@ const Fachome = () => {
         <hr />
         <button type="button" id="Login" className="btn btn-outline-danger" style={{ marginLeft: "50px" }} onClick={handleClick}>Submit</button>
       </div>
-      <div className='container my-3'>
-        <table id='myTable' >
-          <thead>
-            <tr>
-              <th style={{ width: "10%" }}>S. No</th>
-              <th style={{ width: "25%" }}>Name</th>
-              <th style={{ width: "25%" }}>Reg No</th>
-              <th style={{ width: "15%" }}>Courseid</th>
-              <th style={{ width: "25%" }}>Coursename</th>
-              <th style={{ width: "25%" }}>Slot</th>
-              <th style={{ width: "10%" }}>Grades</th>
-              <th style={{ width: "10%" }}>Credit</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              teachnote.map(renderCars)
-            }
-          </tbody>
-        </table>
+      <div>
+        <div className='container my-3'>
+          <table id='myTable' style={{backgroundColor: "white"}}>
+            <thead>
+              <tr>
+                <th style={{ width: "10%" }}>S. No</th>
+                <th style={{ width: "25%" }}>Name</th>
+                <th style={{ width: "25%" }}>Reg No</th>
+                <th style={{ width: "15%" }}>Courseid</th>
+                <th style={{ width: "25%" }}>Coursename</th>
+                <th style={{ width: "25%" }}>Slot</th>
+                <th style={{ width: "10%" }}>Grades</th>
+                <th style={{ width: "10%" }}>Credit</th>
+                <th style={{ width: "10%" }}>Reg. Date</th>
+                <th style={{ width: "10%" }}>Term End Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                teachnote.map(renderCars)
+              }
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   )
